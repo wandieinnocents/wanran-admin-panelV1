@@ -22,3 +22,14 @@ Route::get('/', function () {
 // BACKEND ROUTES
 // Admin dashboard 
 Route::resource('/dashboard', 'App\Http\Controllers\BackEnd\DashboardController');
+// Bookings
+Route::resource('/bookings', 'App\Http\Controllers\BackEnd\BookingController');
+// Feedbacks
+Route::resource('/feedbacks', 'App\Http\Controllers\BackEnd\FeedbackController');
+// Orders
+Route::resource('/orders', 'App\Http\Controllers\BackEnd\OrderController');
+// Food menu category
+Route::resource('/foodmenu_categories', 'App\Http\Controllers\BackEnd\FoodMenuCategoryController');
+// Food menu
+Route::resource('/foodmenus', 'App\Http\Controllers\BackEnd\FoodMenuController');
+
