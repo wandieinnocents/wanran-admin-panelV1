@@ -30,7 +30,7 @@
 
                         <!-- Page content starts here -->
 
-                        <p>Orders menus  create</p>
+                        <p>drink menus categories index</p>
 
                         
 

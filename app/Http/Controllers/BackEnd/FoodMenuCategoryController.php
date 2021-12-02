@@ -25,7 +25,7 @@ class FoodMenuCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.foodmenu_categories.create');
     }
 
     /**

@@ -24,7 +24,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.orders.create');
     }
 
     /**

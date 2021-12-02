@@ -14,6 +14,8 @@
                                     <span data-key="t-dashboard">Dashboard</span>
                                 </a>
                             </li>
+
+
                         <!-- Bookings -->
                             <li>
                                 <a href="/bookings">
@@ -30,6 +32,9 @@
                                 </a>
                             </li>
 
+                        
+                            
+
                             <!-- Orders -->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
@@ -37,6 +42,11 @@
                                     <span data-key="t-apps">Orders</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                        <a href="/orders/create">
+                                            <span data-key="t-calendar">Add Order</span>
+                                        </a>
+                                    </li>
 
                                 <li>
                                         <a href="/orders">
@@ -44,7 +54,7 @@
                                         </a>
                                     </li>
 
-                                    <li>
+                                    <!-- <li>
                                         <a href="apps-calendar.html">
                                             <span data-key="t-calendar">Pending Orders</span>
                                         </a>
@@ -61,22 +71,26 @@
                                             <span data-key="t-chat">Cancelled Orders</span>
                                         </a>
                                     </li>
-        
+         -->
                                   
                                    
                                 </ul>
                             </li>
 
-                            <!-- Food Menu -->
+
+                            <!-- Foods Menu -->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="grid"></i>
-                                    <span data-key="t-apps">Food Menu</span>
+                                    <span data-key="t-apps">Foods Menu</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
+                                
+
+                                
 
                                 <li>
-                                        <a href="">
+                                        <a href="/foodmenu_categories/create">
                                             <span data-key="t-calendar">Add Category</span>
                                         </a>
                                     </li>
@@ -88,7 +102,7 @@
                                     </li>
         
                                     <li>
-                                        <a href="">
+                                        <a href="/foodmenus/create">
                                             <span data-key="t-chat">Add Food</span>
                                         </a>
                                     </li>
@@ -104,6 +118,7 @@
                                 </ul>
                             </li>
 
+
                             <!-- Drinks Menu -->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
@@ -113,25 +128,25 @@
                                 <ul class="sub-menu" aria-expanded="false">
 
                                 <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/drinkmenu_categories/create">
                                             <span data-key="t-calendar">Add Category</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/drinkmenu_categories">
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
         
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/drinkmenus/create">
                                             <span data-key="t-chat">Add Drinks</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/drinkmenus    ">
                                             <span data-key="t-chat">View Drinks</span>
                                         </a>
                                     </li>

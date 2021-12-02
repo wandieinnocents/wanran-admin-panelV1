@@ -5,7 +5,7 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class FoodMenuController extends Controller
+class GalleryCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class FoodMenuController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.foodmenus.index');
-
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class FoodMenuController extends Controller
      */
     public function create()
     {
-        return view('backend.pages_backend.foodmenus.create');
+        //
     }
 
     /**

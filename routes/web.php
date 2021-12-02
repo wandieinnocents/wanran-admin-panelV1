@@ -32,4 +32,8 @@ Route::resource('/orders', 'App\Http\Controllers\BackEnd\OrderController');
 Route::resource('/foodmenu_categories', 'App\Http\Controllers\BackEnd\FoodMenuCategoryController');
 // Food menu
 Route::resource('/foodmenus', 'App\Http\Controllers\BackEnd\FoodMenuController');
+// Drink menu category
+Route::resource('/drinkmenu_categories', 'App\Http\Controllers\BackEnd\DrinkMenuCategoryController');
+// Drink menu
+Route::resource('/drinkmenus', 'App\Http\Controllers\BackEnd\DrinkMenuController');
 
