@@ -37,7 +37,11 @@
                                     <span data-key="t-apps">Orders</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-
+                                    <li>
+                                        <a href="/orders">
+                                            <span data-key="t-calendar">Add Order</span>
+                                        </a>
+                                    </li>
                                 <li>
                                         <a href="/orders">
                                             <span data-key="t-calendar">All Orders</span>
@@ -49,7 +53,7 @@
                                             <span data-key="t-calendar">Pending Orders</span>
                                         </a>
                                     </li>
-        
+
                                     <li>
                                         <a href="apps-chat.html">
                                             <span data-key="t-chat">Completed Orders</span>
@@ -61,48 +65,88 @@
                                             <span data-key="t-chat">Cancelled Orders</span>
                                         </a>
                                     </li>
-        
-                                  
-                                   
+
+
+
                                 </ul>
                             </li>
 
-                            <!-- Food Menu -->
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow">
-                                    <i data-feather="grid"></i>
-                                    <span data-key="t-apps">Food Menu</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
 
+
+                                <!-- Foods Menu -->
                                 <li>
-                                        <a href="">
-                                            <span data-key="t-calendar">Add Category</span>
-                                        </a>
-                                    </li>
+                                    <a href="javascript: void(0);" class="has-arrow">
+                                        <i data-feather="grid"></i>
+                                        <span data-key="t-apps">Foods Menu</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
 
                                     <li>
-                                        <a href="/foodmenu_categories">
-                                            <span data-key="t-calendar">View Categories</span>
-                                        </a>
-                                    </li>
-        
-                                    <li>
-                                        <a href="">
-                                            <span data-key="t-chat">Add Food</span>
-                                        </a>
-                                    </li>
+                                            <a href="apps-calendar.html">
+                                                <span data-key="t-calendar">Add Category</span>
+                                            </a>
+                                        </li>
 
-                                    <li>
-                                        <a href="/foodmenus">
-                                            <span data-key="t-chat">View Foods</span>
-                                        </a>
-                                    </li>
-        
-                                  
-                                   
-                                </ul>
-                            </li>
+                                        <li>
+                                            <a href="/foodmenu_categories">
+                                                <span data-key="t-calendar">View Categories</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="apps-chat.html">
+                                                <span data-key="t-chat">Add Food</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/foodmenus">
+                                                <span data-key="t-chat">View Foods</span>
+                                            </a>
+                                        </li>
+
+
+
+                                    </ul>
+                                </li>
+
+
+                                                        <!-- Specials Menu -->
+                                                        <li>
+                                                            <a href="javascript: void(0);" class="has-arrow">
+                                                                <i data-feather="grid"></i>
+                                                                <span data-key="t-apps">Week Specials </span>
+                                                            </a>
+                                                            <ul class="sub-menu" aria-expanded="false">
+
+                                                            <li>
+                                                                    <a href="apps-calendar.html">
+                                                                        <span data-key="t-calendar">Add Category</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <span data-key="t-calendar">View Categories</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="apps-chat.html">
+                                                                        <span data-key="t-chat">Add Special</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <span data-key="t-chat">View Specials</span>
+                                                                    </a>
+                                                                </li>
+
+
+
+                                                            </ul>
+                                                        </li>
 
                             <!-- Drinks Menu -->
                             <li>
@@ -123,10 +167,10 @@
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
-        
+
                                     <li>
                                         <a href="apps-chat.html">
-                                            <span data-key="t-chat">Add Drinks</span>
+                                            <span data-key="t-chat">Add Drink</span>
                                         </a>
                                     </li>
 
@@ -135,9 +179,9 @@
                                             <span data-key="t-chat">View Drinks</span>
                                         </a>
                                     </li>
-        
-                                  
-                                   
+
+
+
                                 </ul>
                             </li>
 
@@ -161,7 +205,7 @@
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
-        
+
                                     <li>
                                         <a href="apps-chat.html">
                                             <span data-key="t-chat">Add Photo</span>
@@ -173,9 +217,9 @@
                                             <span data-key="t-chat">View Photos</span>
                                         </a>
                                     </li>
-        
-                                  
-                                   
+
+
+
                                 </ul>
                             </li>
 
@@ -199,7 +243,7 @@
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
-        
+
                                     <li>
                                         <a href="apps-chat.html">
                                             <span data-key="t-chat">Add Service</span>
@@ -211,16 +255,16 @@
                                             <span data-key="t-chat">View Services</span>
                                         </a>
                                     </li>
-        
-                                  
-                                   
+
+
+
                                 </ul>
                             </li>
 
 
-                           
 
-                           
+
+
                             <!-- Projects -->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
@@ -240,7 +284,7 @@
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
-        
+
                                     <li>
                                         <a href="apps-chat.html">
                                             <span data-key="t-chat">Add Project</span>
@@ -252,9 +296,9 @@
                                             <span data-key="t-chat">View Projects</span>
                                         </a>
                                     </li>
-        
-                                  
-                                   
+
+
+
                                 </ul>
                             </li>
 
@@ -277,7 +321,7 @@
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
-        
+
                                     <li>
                                         <a href="apps-chat.html">
                                             <span data-key="t-chat">Add Post</span>
@@ -289,9 +333,9 @@
                                             <span data-key="t-chat">View Posts</span>
                                         </a>
                                     </li>
-        
-                                  
-                                   
+
+
+
                                 </ul>
                             </li>
 
@@ -314,7 +358,7 @@
                                             <span data-key="t-calendar">View Roles</span>
                                         </a>
                                     </li>
-        
+
                                     <li>
                                         <a href="apps-chat.html">
                                             <span data-key="t-chat">Add User</span>
@@ -326,9 +370,9 @@
                                             <span data-key="t-chat">View Users</span>
                                         </a>
                                     </li>
-        
-                                  
-                                   
+
+
+
                                 </ul>
                             </li>
 
