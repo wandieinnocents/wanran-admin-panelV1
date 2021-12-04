@@ -15,6 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         //
+        return view('backend.pages_backend.projects.index');
+
     }
 
     /**
@@ -24,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.projects.create');
     }
 
     /**

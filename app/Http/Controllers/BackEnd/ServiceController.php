@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.pages_backend.services.index');
+
     }
 
     /**
@@ -24,7 +25,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.services.create');
+
     }
 
     /**

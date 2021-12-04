@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\FoodMenu;
 
 class FoodMenuController extends Controller
 {
@@ -14,7 +15,8 @@ class FoodMenuController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.foodmenus.index');
+        $foodmenus = FoodMenu::all();
+        return view('backend.pages_backend.foodmenus.index',compact('foodmenus'));
 
     }
 
@@ -36,7 +38,37 @@ class FoodMenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            
+                'foodmenu_photo' => 'required|mimes:doc,pdf,docx,zip,jpeg,jpg,csv,txt,xlx,xls,png',
+                
+            ]);
+
+        $foodmenu = new FoodMenu;
+        $foodmenu->foodmenu_category_id = $request->foodmenu_category_id;
+        $foodmenu->foodmenu_name = $request->foodmenu_name;
+        $foodmenu->foodmenu_price = $request->foodmenu_price;
+        $foodmenu->foodmenu_description = $request->foodmenu_description;
+
+        // photo
+        if($request->hasfile('foodmenu_photo')){
+            $file               = $request->file('foodmenu_photo');
+            $extension          = $file->getClientOriginalExtension();  //get image extension
+            $filename           = time() . '.' .$extension;
+            $file->move('uploads/foodmenu_photos/',$filename);
+            $foodmenu->foodmenu_photo   = url('uploads' . '/foodmenu_photos/'  . $filename);
+        }
+
+        else{
+            // return $request;
+            $foodmenu->foodmenu_photo = '';
+        }
+
+        // dd($foodmenu);
+        $foodmenu->save();
+
+        return redirect('/foodmenus');
     }
 
     /**

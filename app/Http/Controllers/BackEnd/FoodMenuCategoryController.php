@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\FoodMenuCategory;
 
 class FoodMenuCategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class FoodMenuCategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.foodmenu_categories.index');
+        $foodmenu_categories = FoodMenuCategory::all();
+        return view('backend.pages_backend.foodmenu_categories.index',compact('foodmenu_categories'));
 
     }
 
@@ -36,7 +38,19 @@ class FoodMenuCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $foodmenu_category = new FoodMenuCategory;
+        $foodmenu_category->foodmenu_category_name = $request->foodmenu_category_name;
+
+        $foodmenu_category->foodmenu_category_description = $request->foodmenu_category_description;
+        $foodmenu_category->save();
+
+        return redirect('/foodmenu_categories');
+
+        
+        // dd( $foodmenucategory );
+
+
+
     }
 
     /**

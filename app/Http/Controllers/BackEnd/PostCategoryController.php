@@ -15,6 +15,8 @@ class PostCategoryController extends Controller
     public function index()
     {
         //
+        return view('backend.pages_backend.post_categories.index');
+
     }
 
     /**
@@ -25,6 +27,8 @@ class PostCategoryController extends Controller
     public function create()
     {
         //
+        return view('backend.pages_backend.posts.create');
+
     }
 
     /**

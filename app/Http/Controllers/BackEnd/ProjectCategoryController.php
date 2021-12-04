@@ -14,7 +14,8 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.pages_backend.project_categories.index');
+
     }
 
     /**
@@ -24,7 +25,8 @@ class ProjectCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.project_categories.create');
+
     }
 
     /**

@@ -36,4 +36,19 @@ Route::resource('/foodmenus', 'App\Http\Controllers\BackEnd\FoodMenuController')
 Route::resource('/drinkmenu_categories', 'App\Http\Controllers\BackEnd\DrinkMenuCategoryController');
 // Drink menu
 Route::resource('/drinkmenus', 'App\Http\Controllers\BackEnd\DrinkMenuController');
-
+// Gallery  category
+Route::resource('/gallery_categories', 'App\Http\Controllers\BackEnd\GalleryCategoryController');
+// Gallery 
+Route::resource('/galleries', 'App\Http\Controllers\BackEnd\GalleryController');
+// Services category
+Route::resource('/service_categories', 'App\Http\Controllers\BackEnd\ServiceCategoryController');
+// Services 
+Route::resource('/services', 'App\Http\Controllers\BackEnd\ServiceController');
+// Project category
+Route::resource('/project_categories', 'App\Http\Controllers\BackEnd\ProjectCategoryController');
+// Projects
+Route::resource('/projects', 'App\Http\Controllers\BackEnd\ProjectController');
+// Post category
+Route::resource('/post_categories', 'App\Http\Controllers\BackEnd\PostCategoryController');
+// posts
+Route::resource('/posts', 'App\Http\Controllers\BackEnd\PostController');

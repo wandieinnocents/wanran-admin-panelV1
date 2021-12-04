@@ -14,7 +14,8 @@ class GalleryCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.pages_backend.gallery_categories.index');
+
     }
 
     /**
@@ -24,7 +25,7 @@ class GalleryCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.gallery_categories.create');
     }
 
     /**

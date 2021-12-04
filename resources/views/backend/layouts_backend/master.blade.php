@@ -90,6 +90,18 @@
         <script src="{{ asset('assets/backend_assets/assets/js/pages/dashboard.init.js') }}"></script>
 
         <script src="{{ asset('assets/backend_assets/assets/js/app.js') }}"></script>
+        
+
+
+        <!-- pace js -->
+        <script src="{{ asset('assets/backend_assets/assets/libs/pace-js/pace.min.js') }}"></script>
+
+        <!-- ckeditor -->
+        <!-- <script src="assets/backend_assets/assets/libs/ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script> -->
+
+        <!-- init js -->
+        <script src="{{ asset('assets/backend_assets/assets/js/pages/form-editor.init.js') }}"></script>
+
 
     </body>
 

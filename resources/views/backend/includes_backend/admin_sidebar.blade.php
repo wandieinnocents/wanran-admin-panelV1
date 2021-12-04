@@ -166,25 +166,25 @@
                                 <ul class="sub-menu" aria-expanded="false">
 
                                 <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/gallery_categories/create">
                                             <span data-key="t-calendar">Add Category</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/gallery_categories">
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
         
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/galleries/create">
                                             <span data-key="t-chat">Add Photo</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/galleries">
                                             <span data-key="t-chat">View Photos</span>
                                         </a>
                                     </li>
@@ -204,25 +204,25 @@
                                 <ul class="sub-menu" aria-expanded="false">
 
                                 <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/service_categories/create">
                                             <span data-key="t-calendar">Add Category</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/service_categories">
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
         
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/services/create">
                                             <span data-key="t-chat">Add Service</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/services">
                                             <span data-key="t-chat">View Services</span>
                                         </a>
                                     </li>
@@ -245,25 +245,25 @@
                                 <ul class="sub-menu" aria-expanded="false">
 
                                 <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/project_categories/create">
                                             <span data-key="t-calendar">Add Category</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/project_categories">
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
         
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/projects/create">
                                             <span data-key="t-chat">Add Project</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/projects">
                                             <span data-key="t-chat">View Projects</span>
                                         </a>
                                     </li>
@@ -282,25 +282,25 @@
                                 <ul class="sub-menu" aria-expanded="false">
 
                                 <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/post_categories/create">
                                             <span data-key="t-calendar">Add Category</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-calendar.html">
+                                        <a href="/post_categories">
                                             <span data-key="t-calendar">View Categories</span>
                                         </a>
                                     </li>
         
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/posts/create">
                                             <span data-key="t-chat">Add Post</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="apps-chat.html">
+                                        <a href="/posts">
                                             <span data-key="t-chat">View Posts</span>
                                         </a>
                                     </li>

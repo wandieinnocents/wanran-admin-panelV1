@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Feedback;
 
 class FeedbackController extends Controller
 {
@@ -14,7 +15,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.feedbacks.index');
+        $feedbacks =  Feedback::all();
+
+        return view('backend.pages_backend.feedbacks.index',compact('feedbacks'));
     }
 
     /**
