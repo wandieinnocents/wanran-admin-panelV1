@@ -5,6 +5,7 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\FoodMenu;
+use App\Models\FoodMenuCategory;
 
 class FoodMenuController extends Controller
 {
@@ -16,7 +17,8 @@ class FoodMenuController extends Controller
     public function index()
     {
         $foodmenus = FoodMenu::all();
-        return view('backend.pages_backend.foodmenus.index',compact('foodmenus'));
+        $foodmenu_categories = FoodMenuCategory::all();
+        return view('backend.pages_backend.foodmenus.index',compact('foodmenus','foodmenu_categories'));
 
     }
 
@@ -27,7 +29,10 @@ class FoodMenuController extends Controller
      */
     public function create()
     {
-        return view('backend.pages_backend.foodmenus.create');
+          // pick food menu categories
+          
+          $foodmenu_categories = FoodMenuCategory::all();
+        return view('backend.pages_backend.foodmenus.create',compact('foodmenu_categories'));
     }
 
     /**
@@ -38,6 +43,8 @@ class FoodMenuController extends Controller
      */
     public function store(Request $request)
     {
+
+      
 
         $validatedData = $request->validate([
             
@@ -79,7 +86,11 @@ class FoodMenuController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $foodmenu_single = FoodMenu::find($id);
+        // dd($foodmenu_single);
+        return view('backend.pages_backend.foodmenus.show',compact('foodmenu_single'));
+
     }
 
     /**
@@ -90,7 +101,8 @@ class FoodMenuController extends Controller
      */
     public function edit($id)
     {
-        //
+          
+        
     }
 
     /**
@@ -102,7 +114,31 @@ class FoodMenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $foodmenu_update = FoodMenu::find($id);
+        $foodmenu_update->foodmenu_category_id = $request->foodmenu_category_id;
+        $foodmenu_update->foodmenu_name = $request->foodmenu_name;
+        $foodmenu_update->foodmenu_price = $request->foodmenu_price;
+        $foodmenu_update->foodmenu_description = $request->foodmenu_description;
+
+        // photo
+        if($request->hasfile('foodmenu_photo')){
+            $file               = $request->file('foodmenu_photo');
+            $extension          = $file->getClientOriginalExtension();  //get image extension
+            $filename           = time() . '.' .$extension;
+            $file->move('uploads/foodmenu_photos/',$filename);
+            $foodmenu_update->foodmenu_photo   = url('uploads' . '/foodmenu_photos/'  . $filename);
+        }
+
+        else{
+            // return $request;
+            $foodmenu_update->foodmenu_photo = '';
+        }
+
+        // dd($foodmenu);
+        $foodmenu_update->save();
+
+        return redirect('/foodmenus');
     }
 
     /**

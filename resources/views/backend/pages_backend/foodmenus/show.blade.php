@@ -29,8 +29,11 @@
                         <!-- end page title -->
 
                         <!-- Page content starts here -->
-
-                        <p>food menus categories index</p>
+    
+                        <p>{{ $foodmenu_single->foodmenu_price }}</p>
+                        <p>{{ $foodmenu_single->foodmenu_price }}</p>
+                        <p>{{ $foodmenu_single->foodmenu_price }}</p>
+                        <p>{{ $foodmenu_single->foodmenu_price }}</p>
 
                         
 

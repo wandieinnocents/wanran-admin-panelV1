@@ -52,9 +52,16 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Category</label>
-                                                        <input type="text" class="form-control" name="foodmenu_category_id" id="validationCustom01" placeholder="Category" value="" required>
-                                                        
+                                                    <label class="form-label" for="validationCustom01">Category</label>
+
+                                                    <select name="foodmenu_category_id" class="form-select">
+                                                        @foreach($foodmenu_categories as $foodmenu_category)
+                                                            <option value="{{ $foodmenu_category->id }}">{{ $foodmenu_category->foodmenu_category_name }}</option>
+                                                           
+                                                            @endforeach
+                                                        </select>
+
+                
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
