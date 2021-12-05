@@ -149,6 +149,9 @@ class FoodMenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $foodmenu = FoodMenu::findOrFail($id);
+        $foodmenu->delete();
+
+        return redirect('/foodmenus')->with('success', 'Food is successfully deleted');
     }
 }

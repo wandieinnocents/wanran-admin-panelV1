@@ -121,17 +121,25 @@
                                         <td colspan="6">
                                             <div class="row">
                                              <div class="col-md-4">
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $foodmenu->id }}" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
+                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $foodmenu->id }}" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                             </div>
                                                 
                                             <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFoodOrder{{ $foodmenu->id }}" data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                             </div>
-                                                
+                                            
+                                            <!-- delete food menu -->
                                             <div class="col-md-4">
+                                            <form action="{{ route('foodmenus.update', $foodmenu->id) }}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
+                                                        
+                                                    </form>
 
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i class="fas fa-trash "></i></button>
+
+
                                         </div>
                                                 
                                                 
