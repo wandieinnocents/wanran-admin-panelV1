@@ -18,6 +18,7 @@ class CreateFoodMenusTable extends Migration
             $table->integer('foodmenu_category_id');            
             $table->string('foodmenu_name');
             $table->string('foodmenu_price');
+            $table->string('foodmenu_status');
             $table->text('foodmenu_photo');
             $table->text('foodmenu_description');
             $table->timestamps();

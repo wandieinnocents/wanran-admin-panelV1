@@ -17,8 +17,9 @@ class FoodMenuController extends Controller
     public function index()
     {
         $foodmenus = FoodMenu::all();
+        $count_foodmenus = FoodMenu::count();
         $foodmenu_categories = FoodMenuCategory::all();
-        return view('backend.pages_backend.foodmenus.index',compact('foodmenus','foodmenu_categories'));
+        return view('backend.pages_backend.foodmenus.index',compact('foodmenus','foodmenu_categories','count_foodmenus'));
 
     }
 
@@ -55,6 +56,7 @@ class FoodMenuController extends Controller
         $foodmenu = new FoodMenu;
         $foodmenu->foodmenu_category_id = $request->foodmenu_category_id;
         $foodmenu->foodmenu_name = $request->foodmenu_name;
+        $foodmenu->foodmenu_status = $request->foodmenu_status;
         $foodmenu->foodmenu_price = $request->foodmenu_price;
         $foodmenu->foodmenu_description = $request->foodmenu_description;
 
@@ -118,6 +120,8 @@ class FoodMenuController extends Controller
         $foodmenu_update = FoodMenu::find($id);
         $foodmenu_update->foodmenu_category_id = $request->foodmenu_category_id;
         $foodmenu_update->foodmenu_name = $request->foodmenu_name;
+        $foodmenu_update->foodmenu_status = $request->foodmenu_status;
+
         $foodmenu_update->foodmenu_price = $request->foodmenu_price;
         $foodmenu_update->foodmenu_description = $request->foodmenu_description;
 

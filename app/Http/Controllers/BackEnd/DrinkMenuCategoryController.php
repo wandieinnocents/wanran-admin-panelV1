@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\DrinkMenuCategory;
 
 class DrinkMenuCategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class DrinkMenuCategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.drinkmenu_categories.index');
+        $drinkmenu_categories = DrinkMenuCategory::all();
+        return view('backend.pages_backend.drinkmenu_categories.index',compact('drinkmenu_categories'));
     }
 
     /**
@@ -36,6 +38,16 @@ class DrinkMenuCategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $drinkmenu_category = new DrinkMenuCategory;
+        $drinkmenu_category->drinkmenu_category_name = $request->drinkmenu_category_name;
+
+        $drinkmenu_category->drinkmenu_category_description = $request->drinkmenu_category_description;
+        $drinkmenu_category->save();
+
+        return redirect('/drinkmenu_categories');
+
+        
+        // dd( $foodmenucategory );
     }
 
     /**

@@ -20,4 +20,5 @@ class FoodMenuCategory extends Model
         // food menu category has many  food menu items
         return $this->hasMany(FoodMenu::class);
     }
+    
 }

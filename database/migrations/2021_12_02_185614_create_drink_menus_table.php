@@ -15,6 +15,12 @@ class CreateDrinkMenusTable extends Migration
     {
         Schema::create('drink_menus', function (Blueprint $table) {
             $table->id();
+            $table->integer('drinkmenu_category_id');            
+            $table->string('drinkmenu_name');
+            $table->string('drinkmenu_price');
+            $table->string('drinkmenu_status');
+            $table->text('drinkmenu_photo');
+            $table->text('drinkmenu_description');
             $table->timestamps();
         });
     }

@@ -29,7 +29,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <h5 class="card-title">Food Menu <span class="text-muted fw-normal ms-2">(834)</span></h5>
+                                    <h5 class="card-title">Food Menu <span class="text-muted fw-normal ms-2">({{ $count_foodmenus }})</span></h5>
                                 </div>
                             </div>
 
@@ -114,7 +114,7 @@
                                         <td>{{ $foodmenu->foodmenu_description }}</td>
                                         <td>
                                             <div class="d-flex gap-2">
-                                                <a href="#" class="badge badge-soft-primary font-size-11">in stock</a>
+                                                <a href="#" class="badge badge-soft-primary font-size-11">{{ $foodmenu->foodmenu_status }}</a>
                                                 
                                             </div>
                                         </td>
@@ -136,7 +136,7 @@
                                                         @method('DELETE')
                                                         <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
                                                         
-                                                    </form>
+                                            </form>
 
 
 
@@ -172,6 +172,10 @@
 
                                     <p>Category : {{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</p>
                                     <hr>
+                                    <p>Status :
+                                    <a href="#" class="badge badge-soft-primary font-size-11">{{ $foodmenu->foodmenu_status }}</a>
+                                    </p>
+                                    <hr>
 
 
                                     <p>Price : {{ $foodmenu->foodmenu_price }}</p>
@@ -201,6 +205,8 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
+
+
                                         <!-- form update food menu items -->
                                     
                             <form action="{{ route('foodmenus.update', $foodmenu->id) }}" method="post" enctype="multipart/form-data">
@@ -216,6 +222,22 @@
                                                            
                                                             @endforeach
                                                         </select>
+
+                
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                    <label class="form-label" for="validationCustom01">Status</label>
+
+                                                    <select name="foodmenu_status" class="form-select">
+                                                        
+                                                        <option value="in_stock" selected >In Stock</option>
+                                                        <option value="out_stock">Out Stock</option>
+                                                        <option value="excess">Excess</option>
+                                                        <option value="almost_done">Almost done</option>
+           
+                                                        
+                                                </select>
 
                 
                                                     </div>

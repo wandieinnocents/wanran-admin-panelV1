@@ -59,18 +59,38 @@
                                                             <option value="{{ $foodmenu_category->id }}">{{ $foodmenu_category->foodmenu_category_name }}</option>
                                                            
                                                             @endforeach
-                                                        </select>
+                                                    </select>
 
                 
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-5">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom02">Food Name</label>
                                                         <input type="text" class="form-control"  name="foodmenu_name" id="validationCustom02" placeholder="Foos name" value="" required>
                                                         
                                                     </div>
                                                 </div>
+
+                                                <!-- Hidden status on create , visible on update -->
+                                                <div class="col-md-1" hidden>
+                                                    <div class="mb-3">
+                                                    <label class="form-label" for="validationCustom01">Status</label>
+
+                                                    <select name="foodmenu_status" class="form-select">
+                                                        
+                                                            <option value="in_stock" selected >In Stock</option>
+                                                            <option value="out_stock">Out Stock</option>
+                                                            <option value="excess">Excess</option>
+                                                            <option value="almost_done">Almost done</option>
+               
+                                                            
+                                                    </select>
+
+                
+                                                    </div>
+                                                </div>
+                                                <!-- Hidden status on create , visible on update -->
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
