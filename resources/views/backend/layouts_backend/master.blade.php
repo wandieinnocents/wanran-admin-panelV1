@@ -31,7 +31,7 @@
         /* body.modal-open{overflow:hidden!important;} */
     </style>
 
-@yield('extra_styles')
+    @yield('extra_styles')
     <body>
 
     <!-- <body data-layout="horizontal"> -->

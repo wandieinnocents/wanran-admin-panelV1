@@ -131,10 +131,7 @@ class DrinkMenuController extends Controller
             $drinkmenu_update->drinkmenu_photo   = url('uploads' . '/drinkmenu_photos/'  . $filename);
         }
 
-        else{
-            // return $request;
-            $drinkmenu_update->drinkmenu_photo = '';
-        }
+      
 
         // dd($foodmenu);
         $drinkmenu_update->save();

@@ -134,10 +134,6 @@ class FoodMenuController extends Controller
             $foodmenu_update->foodmenu_photo   = url('uploads' . '/foodmenu_photos/'  . $filename);
         }
 
-        else{
-            // return $request;
-            $foodmenu_update->foodmenu_photo = '';
-        }
 
         // dd($foodmenu);
         $foodmenu_update->save();
