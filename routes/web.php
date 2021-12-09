@@ -52,3 +52,6 @@ Route::resource('/projects', 'App\Http\Controllers\BackEnd\ProjectController');
 Route::resource('/post_categories', 'App\Http\Controllers\BackEnd\PostCategoryController');
 // posts
 Route::resource('/posts', 'App\Http\Controllers\BackEnd\PostController');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
