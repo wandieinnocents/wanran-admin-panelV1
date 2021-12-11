@@ -82,7 +82,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $data->appends($_GET)->links() }}
+                <!-- {{ $data->appends($_GET)->links() }} -->
             </div>
         </div>
     </div>

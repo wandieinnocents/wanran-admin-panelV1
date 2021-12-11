@@ -20,6 +20,25 @@ Route::get('/', function () {
 
 
 // BACKEND ROUTES
+
+Auth::routes();
+
+// middleware auth 
+Route::group(['middleware' => ['auth']], function() {
+
+
+
+// users
+Route::resource('/users', 'App\Http\Controllers\UserController');
+// Roles
+Route::resource('/roles', 'App\Http\Controllers\RoleController');
+// permissions
+Route::resource('/permissions', 'App\Http\Controllers\PermissionController');
+// posts
+Route::resource('/posts', 'App\Http\Controllers\BackEnd\PostController');
+// Post category
+Route::resource('/post_categories', 'App\Http\Controllers\BackEnd\PostCategoryController');
+
 // Admin dashboard 
 Route::resource('/dashboard', 'App\Http\Controllers\BackEnd\DashboardController');
 // Bookings
@@ -48,25 +67,10 @@ Route::resource('/services', 'App\Http\Controllers\BackEnd\ServiceController');
 Route::resource('/project_categories', 'App\Http\Controllers\BackEnd\ProjectCategoryController');
 // Projects
 Route::resource('/projects', 'App\Http\Controllers\BackEnd\ProjectController');
-// Post category
-Route::resource('/post_categories', 'App\Http\Controllers\BackEnd\PostCategoryController');
-// posts
 
 
 
 
-Auth::routes();
-
-// middleware auth 
-Route::group(['middleware' => ['auth']], function() {
-// users
-Route::resource('/users', 'App\Http\Controllers\UserController');
-// Roles
-Route::resource('/roles', 'App\Http\Controllers\RoleController');
-// permissions
-Route::resource('/permissions', 'App\Http\Controllers\PermissionController');
-// posts
-Route::resource('/posts', 'App\Http\Controllers\BackEnd\PostController');
 });
 
 

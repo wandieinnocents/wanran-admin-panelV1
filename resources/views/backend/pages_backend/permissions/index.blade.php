@@ -30,7 +30,6 @@
 
                         <!-- Page content starts here -->
 
-                        <div class="container">
     <div class="justify-content-center">
         @if (\Session::has('success'))
             <div class="alert alert-success">
@@ -78,10 +77,6 @@
             </div>
         </div>
     </div>
-</div>
-                        
-
-
 
 
 
