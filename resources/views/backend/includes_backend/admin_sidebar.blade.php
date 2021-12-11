@@ -74,13 +74,13 @@
 
                         <li>
                             <a href="/foodmenus/create">
-                                <span data-key="t-chat">Add Drinks</span>
+                                <span data-key="t-chat">Add Food</span>
                             </a>
                         </li>
 
                         <li>
                             <a href="/foodmenus">
-                                <span data-key="t-chat">View Drinks</span>
+                                <span data-key="t-chat">View Foods</span>
                             </a>
                         </li>
                     </ul>
