@@ -263,7 +263,119 @@
                     </ul>
                 </li>
 
-                <!-- Blog -->
+
+                <hr>
+
+                @guest
+                
+                <!-- Login -->
+                @if (Route::has('login'))
+                <li>
+                    <a href="{{ route('login') }}">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Login</span>
+                    </a>
+                    
+                </li>
+                @endif
+
+                <!-- Register -->
+                @if (Route::has('register'))
+                <li>
+                    <a href="{{ route('register') }}">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Register</span>
+                    </a>
+                    
+                </li>
+                @endif
+
+                <!-- else -->
+                @else
+
+                    <!-- Users -->
+                    @can('user-list')
+                    <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Users</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                       
+
+                        
+
+                        <li>
+                            <a href="{{ route('users.create') }}">
+                                <span data-key="t-chat">Add User</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('users.index') }}">
+                                <span data-key="t-chat">View Users</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endcan
+
+                <!-- Roles -->
+                @can('role-list')
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Roles</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('roles.create') }}">
+                                <span data-key="t-calendar">Add Roles</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('roles.index') }}">
+                                <span data-key="t-calendar">View Roles</span>
+                            </a>
+                        </li>
+
+                       
+                       
+                    </ul>
+                </li>
+                @endcan
+
+
+                <!-- Permissions -->
+                @can('permission-list')
+                 <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Permissions</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('permissions.create') }}">
+                                <span data-key="t-calendar">Add Permissions</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('permissions.index') }}">
+                                <span data-key="t-calendar">View Permissions</span>
+                            </a>
+                        </li>
+
+                       
+                       
+                    </ul>
+                </li>
+                @endcan
+
+
+                @can('post-list')
+                <!-- Posts -->
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="grid"></i>
@@ -285,51 +397,57 @@
                         </li>
 
                         <li>
-                            <a href="/posts/create">
+                            <a href="{{ route('posts.create') }}">
                                 <span data-key="t-chat">Add Post</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="/posts">
+                            <a href="{{ route('posts.index') }}">
                                 <span data-key="t-chat">View Posts</span>
                             </a>
                         </li>
                     </ul>
                 </li>
+                @endcan
+        
+              
 
-                <!-- Projects -->
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow">
+                    <a href="{{ route('logout') }}">
                         <i data-feather="grid"></i>
-                        <span data-key="t-apps">Users</span>
+                        <span data-key="t-apps">Logout</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li>
-                            <a href="apps-calendar.html">
-                                <span data-key="t-calendar">Add Role</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="apps-calendar.html">
-                                <span data-key="t-calendar">View Roles</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="apps-chat.html">
-                                <span data-key="t-chat">Add User</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="apps-chat.html">
-                                <span data-key="t-chat">View Users</span>
-                            </a>
-                        </li>
-                    </ul>
+                    
                 </li>
+
+
+                @endguest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </ul>
 
             <div

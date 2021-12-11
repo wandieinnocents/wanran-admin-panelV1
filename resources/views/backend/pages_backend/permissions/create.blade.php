@@ -32,28 +32,30 @@
 
                         <div class="container">
     <div class="justify-content-center">
-        @if (\Session::has('success'))
-            <div class="alert alert-success">
-                <p>{{ \Session::get('success') }}</p>
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Opps!</strong> Something went wrong, please check below errors.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
         @endif
         <div class="card">
-            <div class="card-header">Post
-                @can('role-create')
-                    <span class="float-right">
-                        <a class="btn btn-primary" href="{{ route('posts.index') }}">Back</a>
-                    </span>
-                @endcan
+            <div class="card-header">Create permission
+                <span class="float-right">
+                    <a class="btn btn-primary" href="{{ route('permissions.index') }}">Permissions</a>
+                </span>
             </div>
             <div class="card-body">
-                <div class="lead">
-                    <strong>Title:</strong>
-                    {{ $post->title }}
-                </div>
-                <div class="lead">
-                    <strong>Body:</strong>
-                    {{ $post->body }}
-                </div>
+                {!! Form::open(array('route' => 'permissions.store','method'=>'POST')) !!}
+                    <div class="form-group">
+                        <strong>Name:</strong>
+                        {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

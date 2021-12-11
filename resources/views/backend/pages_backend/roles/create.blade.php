@@ -11,21 +11,27 @@
                     <div class="container-fluid">
 
                         <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
-
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item active">Bookings</li>
-                                        </ol>
-                                    </div>
-
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <h5 class="card-title">Users <span class="text-muted fw-normal ms-2">88</span></h5>
                                 </div>
                             </div>
+
+                            <div class="col-md-6">
+                                <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
+                                   
+                                    <div>
+                                        <a href="{{ route('roles.index') }}" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> All Roles</a>
+                                    </div>
+                                    
+                                   
+                                </div>
+
+                            </div>
                         </div>
+
+
                         <!-- end page title -->
 
                         <!-- Page content starts here -->
@@ -43,20 +49,21 @@
             </div>
         @endif
         <div class="card">
-            <div class="card-header">Create post
-                <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('posts.index') }}">Posts</a>
-                </span>
-            </div>
+            
             <div class="card-body">
-                {!! Form::open(array('route' => 'posts.store', 'method'=>'POST')) !!}
+                {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
                     <div class="form-group">
-                        <strong>Title:</strong>
-                        {!! Form::text('title', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
+                        <strong>Name:</strong>
+                        {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
                     </div>
                     <div class="form-group">
-                        <strong>Body:</strong>
-                        {!! Form::textarea('body', null, array('placeholder' => 'Body','class' => 'form-control')) !!}
+                        <strong>Permission:</strong>
+                        <br/>
+                        @foreach($permission as $value)
+                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                            {{ $value->name }}</label>
+                        <br/>
+                        @endforeach
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 {!! Form::close() !!}

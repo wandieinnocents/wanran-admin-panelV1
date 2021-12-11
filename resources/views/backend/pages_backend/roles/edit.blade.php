@@ -32,28 +32,39 @@
 
                         <div class="container">
     <div class="justify-content-center">
-        @if (\Session::has('success'))
-            <div class="alert alert-success">
-                <p>{{ \Session::get('success') }}</p>
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Opps!</strong> Something went wrong, please check below errors.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
         @endif
         <div class="card">
-            <div class="card-header">Post
-                @can('role-create')
-                    <span class="float-right">
-                        <a class="btn btn-primary" href="{{ route('posts.index') }}">Back</a>
-                    </span>
-                @endcan
+            <div class="card-header">Edit role
+                <span class="float-right">
+                    <a class="btn btn-primary" href="{{ route('roles.index') }}">Roles</a>
+                </span>
             </div>
             <div class="card-body">
-                <div class="lead">
-                    <strong>Title:</strong>
-                    {{ $post->title }}
-                </div>
-                <div class="lead">
-                    <strong>Body:</strong>
-                    {{ $post->body }}
-                </div>
+                {!! Form::model($role, ['route' => ['roles.update', $role->id],'method' => 'PATCH']) !!}
+                    <div class="form-group">
+                        <strong>Name:</strong>
+                        {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                    </div>
+                    <div class="form-group">
+                        <strong>Permission:</strong>
+                        <br/>
+                        @foreach($permission as $value)
+                            <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
+                            {{ $value->name }}</label>
+                        <br/>
+                        @endforeach
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

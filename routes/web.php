@@ -51,7 +51,32 @@ Route::resource('/projects', 'App\Http\Controllers\BackEnd\ProjectController');
 // Post category
 Route::resource('/post_categories', 'App\Http\Controllers\BackEnd\PostCategoryController');
 // posts
-Route::resource('/posts', 'App\Http\Controllers\BackEnd\PostController');
+
+
+
+
 Auth::routes();
 
+// middleware auth 
+Route::group(['middleware' => ['auth']], function() {
+// users
+Route::resource('/users', 'App\Http\Controllers\UserController');
+// Roles
+Route::resource('/roles', 'App\Http\Controllers\RoleController');
+// permissions
+Route::resource('/permissions', 'App\Http\Controllers\PermissionController');
+// posts
+Route::resource('/posts', 'App\Http\Controllers\BackEnd\PostController');
+});
+
+
+
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Logout
+Route::get('/logout', function(){
+    Auth::logout();
+    return Redirect::to('login');
+ });

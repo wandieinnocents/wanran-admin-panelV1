@@ -38,21 +38,17 @@
             </div>
         @endif
         <div class="card">
-            <div class="card-header">Post
+            <div class="card-header">Permission
                 @can('role-create')
                     <span class="float-right">
-                        <a class="btn btn-primary" href="{{ route('posts.index') }}">Back</a>
+                        <a class="btn btn-primary" href="{{ route('permissions.index') }}">Back</a>
                     </span>
                 @endcan
             </div>
             <div class="card-body">
                 <div class="lead">
-                    <strong>Title:</strong>
-                    {{ $post->title }}
-                </div>
-                <div class="lead">
-                    <strong>Body:</strong>
-                    {{ $post->body }}
+                    <strong>Name:</strong>
+                    {{ $permission->name }}
                 </div>
             </div>
         </div>
