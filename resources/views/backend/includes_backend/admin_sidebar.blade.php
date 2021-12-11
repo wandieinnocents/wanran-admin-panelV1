@@ -374,7 +374,8 @@
                 @endcan
 
 
-                @can('post-list')
+                
+                @can('posts-section-dropdown')
                 <!-- Posts -->
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
@@ -382,12 +383,17 @@
                         <span data-key="t-apps">Blog</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
+                        <!-- Post categories create -->
+                    @can('postcategories-create')
                         <li>
                             <a href="/post_categories/create">
                                 <span data-key="t-calendar">Add Category</span>
                             </a>
                         </li>
+                    @endcan
 
+                    <!-- Post categories list -->
+                    @can('postcategories-list')
                         <li>
                             <a href="/post_categories">
                                 <span data-key="t-calendar"
@@ -395,18 +401,27 @@
                                 >
                             </a>
                         </li>
+                    @endcan
 
+                        <!-- Create post -->
+                        @can('post-create')
                         <li>
                             <a href="{{ route('posts.create') }}">
                                 <span data-key="t-chat">Add Post</span>
                             </a>
                         </li>
+                       @endcan
+
+                    <!-- List posts -->
+                       @can('post-list')
 
                         <li>
                             <a href="{{ route('posts.index') }}">
                                 <span data-key="t-chat">View Posts</span>
                             </a>
                         </li>
+                      @endcan
+
                     </ul>
                 </li>
                 @endcan
