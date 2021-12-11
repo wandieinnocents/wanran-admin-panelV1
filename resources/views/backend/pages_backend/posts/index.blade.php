@@ -24,10 +24,12 @@
 
                             <div class="col-md-6">
                                 <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
-                                   
+                                @can('post-create')
                                     <div>
                                         <a href="{{ route('posts.create') }}" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add Post</a>
                                     </div>
+                                 @endcan
+                                
                                     
                                    
                                 </div>
@@ -49,11 +51,7 @@
         @endif
         <div class="card">
             <div class="card-header">Posts
-                @can('role-create')
-                    <span class="float-right">
-                        <a class="btn btn-primary" href="{{ route('posts.create') }}">New post</a>
-                    </span>
-                @endcan
+                
             </div>
             <div class="card-body">
                 <table class="table table-hover">
