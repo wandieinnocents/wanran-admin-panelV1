@@ -7,10 +7,10 @@
         <meta charset="utf-8" />
         <title>Restaurant</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
+        <meta content="Quality at its best" name="description" />
+        <meta content="Wanran" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico"/>
 
         <!-- plugin css -->
         <link href="{{ asset('assets/backend_assets/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
@@ -24,13 +24,12 @@
         <link href="{{ asset('assets/backend_assets/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{ asset('assets/backend_assets/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+       
+        <!-- @notifyCss -->
 
     </head>
-
-    <style>
-        /* body.modal-open{overflow:hidden!important;} */
-    </style>
-
+    
+   
     @yield('extra_styles')
     <body>
 
@@ -47,6 +46,7 @@
             @include('backend.includes_backend.admin_sidebar')
             <!-- Left Sidebar End -->
 
+            
             
 
             <!-- ============================================================== -->
@@ -106,6 +106,9 @@
 
         <!-- init js -->
         <script src="{{ asset('assets/backend_assets/assets/js/pages/form-editor.init.js') }}"></script>
+
+        <!-- @notifyJs
+        <x:notify-messages /> -->
 
 
     </body>

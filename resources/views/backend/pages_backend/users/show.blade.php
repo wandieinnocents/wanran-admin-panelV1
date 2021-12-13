@@ -34,28 +34,59 @@
                         <!-- Page content starts here -->
 
                       
-    <div class="justify-content-center">
-      
-        <div class="card">
-            
-            <div class="card-body">
-                <div class="lead">
-                    <strong>Name:</strong>
-                    {{ $user->name }}
-                </div>
-                <div class="lead">
-                    <strong>Email:</strong>
-                    {{ $user->email }}
-                </div>
-                <div class="lead">
-                    <strong>Password:</strong>
-                    ********
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
                         
+
+    <!-- User profile  -->
+
+    <div class="row">
+                        <div class="col-md-3">
+
+                        </div>
+
+                        <div class="col-md-6">
+                        <div class="card text-center">
+                                    <div class="card-body">
+                                       
+                                        
+                                        <div class="mx-auto mb-4">
+                                            <img src="{{ asset('assets/backend_assets/assets/images/users/avatar-2.jpg') }}" alt="" class="avatar-xl rounded-circle img-thumbnail">
+                                        </div>
+                                        <h5 class="font-size-16 mb-1"><a href="#" class="text-dark"> {{ $user->name }}</a></h5>
+                                        <p class="text-muted mb-2"> {{ $user->email }}</p>
+                                        <p class="text-muted mb-2"> <strong>********</strong> </p>
+                                        
+                                        
+                                    </div>
+
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-success text-truncate"><i class="uil uil-user me-1"></i> Email</button>
+                                        <!-- Edit user -->
+                                        <button type="button" class="btn btn-primary text-truncate"><i class="uil uil-envelope-alt me-1"></i>
+                                        @can('user-edit')
+                                        <a class="text-white" href="{{ route('users.edit',$user->id) }}">
+                                          Edit</a>
+                                       @endcan
+                                        </button>
+                                    
+                                    
+                                       
+
+                                    </div>
+                                </div>                           
+                            
+                        </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                        </div>
+            </div>
+                        
+
+    <!-- End of user profile -->
 
 
 

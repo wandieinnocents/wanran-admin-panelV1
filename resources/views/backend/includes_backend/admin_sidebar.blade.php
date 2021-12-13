@@ -1,4 +1,4 @@
-<div class="vertical-menu">
+<div class="vertical-menu ">
     <div data-simplebar class="h-100">
         <!--- Sidemenu -->
         <div id="sidebar-menu">

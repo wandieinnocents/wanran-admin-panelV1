@@ -69,9 +69,12 @@ class UserController extends Controller
     
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
-    
-        return redirect()->route('users.index')
-            ->with('success', 'User created successfully.');
+        notify()->success('User created Successfully! ⚡️');
+        // return redirect()->route('users.index');
+        
+
+        // notify()->success('New Client created Successfully! ⚡️');
+        return redirect('/users');
 
             
     }
@@ -140,6 +143,7 @@ class UserController extends Controller
     
         $user->assignRole($request->input('roles'));
     
+        // notify()->success('User created Successfully! ⚡️');
         return redirect()->route('users.index')
             ->with('success', 'User updated successfully.');
     }
