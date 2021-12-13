@@ -18,7 +18,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <h5 class="card-title">Food Menu Categories <span class="text-muted fw-normal ms-2">(834)</span></h5>
+                                    <h5 class="card-title">Food Menu Categories <span class="text-muted fw-normal ms-2">(10)</span></h5>
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@
                                     <th scope="col">#ID</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Description</th>
-                                    <th style="width: 80px; min-width: 80px;">Action</th>
+                                    <th style="width: 150px; min-width: 80px;">Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -75,15 +75,29 @@
                                         <td>{{ $foodmenu_category->foodmenu_category_name }}</td>
                                         <td>{{ $foodmenu_category->foodmenu_category_description }}</td>
                                         
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="fas fa-pencil-alt "></i>
-                                                <i class=" far fa-eye "></i>
-                                                <i class="fas fa-trash "></i>
-                                                </button>
+                                        <td colspan="6">
+                                            <div class="row">
+                                             <div class="col-md-4">
+                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
+                                            </div>
                                                 
-                                               
+                                            <div class="col-md-4">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFoodOrder" data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
+
+                                            </div>
+                                            
+                                            <!-- delete food menu -->
+                                            <div class="col-md-4">
+                                            <form action="" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
+                                                        
+                                            </form>
+
+
+
+                                        </div>
                                             </div>
                                         </td>
                                       </tr>

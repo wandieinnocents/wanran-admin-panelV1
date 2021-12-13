@@ -31,23 +31,10 @@
 
                 <!-- Orders -->
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="grid"></i>
-                        <span data-key="t-apps">Orders</span>
+                    <a href="{{ route('orders.index') }}">
+                        <i data-feather="users"></i>
+                        <span data-key="t-dashboard">Orders</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li>
-                            <a href="/orders/create">
-                                <span data-key="t-calendar">Add Order</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/orders">
-                                <span data-key="t-calendar">All Orders</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
 
@@ -87,7 +74,7 @@
                 </li>
 
                 <!-- Specials Menu -->
-                <li>
+                <!-- <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="grid"></i>
                         <span data-key="t-apps">Week Specials </span>
@@ -119,7 +106,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
 
 

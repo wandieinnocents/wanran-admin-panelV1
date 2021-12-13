@@ -18,7 +18,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <h5 class="card-title">Customer Feedback <span class="text-muted fw-normal ms-2">(834)</span></h5>
+                                    <h5 class="card-title">Customer Feedback <span class="text-muted fw-normal ms-2">(1)</span></h5>
                                 </div>
                             </div>
 
@@ -59,13 +59,12 @@
                                     <th scope="col">Phone</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Status</th>
-                                    <th style="width: 80px; min-width: 80px;">Action</th>
+                                    <th style="width: 150px; min-width: 80px;">Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                    
                                     
-                                @foreach($feedbacks as $feedback)
                                       <tr>
                                         <th scope="row">
                                             <div class="form-check font-size-16">
@@ -75,32 +74,45 @@
                                         </th>
                                         <td>
                                             <img src="assets/backend_assets/assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded-circle me-2">
-                                            <a href="#" class="text-body">{{ $feedback->first_name }} {{ $feedback->last_name }}</a>
+                                            <a href="#" class="text-body">wandie Innocent</a>
                                         </td>
-                                        <td>{{ $feedback->subject }}</td>
-                                        <td>{{ $feedback->email }}</td>
-                                        <td>{{ $feedback->address }}</td>
-                                        <td>{{ $feedback->phone }}</td>
-                                        <td>{{ $feedback->description }}</td>
+                                        <td>Food Request</td>
+                                        <td>wandie@gmail.com</td>
+                                        <td>Kampala</td>
+                                        <td>0788555555</td>
+                                        <td>I am  happy for your services</td>
                                         <td>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="badge badge-soft-primary font-size-11">Delivered</a>
                                                 
                                             </div>
                                         </td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="fas fa-pencil-alt "></i>
-                                                <i class=" far fa-eye "></i>
-                                                <i class="fas fa-trash "></i>
-                                                </button>
+                                        <td colspan="6">
+                                            <div class="row">
+                                             <div class="col-md-4">
+                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
+                                            </div>
                                                 
-                                               
+                                            <div class="col-md-4">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFoodOrder" data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
+
+                                            </div>
+                                            
+                                            <!-- delete food menu -->
+                                            <div class="col-md-4">
+                                            <form action="" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
+                                                        
+                                            </form>
+
+
+
+                                        </div>
                                             </div>
                                         </td>
                                       </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- end table -->

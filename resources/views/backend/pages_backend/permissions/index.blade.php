@@ -37,7 +37,7 @@
             </div>
         @endif
         <div class="card">
-            <div class="card-header">Permissions
+            <div class="card-header">
                 @can('role-create')
                     <span class="float-right">
                         <a class="btn btn-primary" href="{{ route('permissions.create') }}">New Permission</a>
