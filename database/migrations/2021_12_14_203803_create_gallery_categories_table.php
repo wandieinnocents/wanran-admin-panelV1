@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFoodMenuCategoriesTable extends Migration
+class CreateGalleryCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateFoodMenuCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('food_menu_categories', function (Blueprint $table) {
+        Schema::create('gallery_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('foodmenu_category_name');
-            $table->text('foodmenu_category_description');
+            $table->string('gallery_category_name');
+            $table->text('gallery_category_description');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateFoodMenuCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_menu_categories');
+        Schema::dropIfExists('gallery_categories');
     }
 }

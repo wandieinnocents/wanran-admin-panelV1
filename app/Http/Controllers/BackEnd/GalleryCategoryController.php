@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\GalleryCategory;
 use Illuminate\Http\Request;
 
 class GalleryCategoryController extends Controller
@@ -14,7 +15,8 @@ class GalleryCategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.gallery_categories.index');
+        $gallery_categories = GalleryCategory::all();
+        return view('backend.pages_backend.gallery_categories.index',compact('gallery_categories'));
 
     }
 
@@ -36,7 +38,13 @@ class GalleryCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gallery_category = new GalleryCategory();
+        $gallery_category->gallery_category_name = $request->gallery_category_name;
+        $gallery_category->gallery_category_description = $request->gallery_category_description;
+        $gallery_category->save();
+
+        return redirect('/gallery_categories');
+
     }
 
     /**

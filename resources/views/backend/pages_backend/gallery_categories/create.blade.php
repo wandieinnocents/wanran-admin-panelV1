@@ -47,13 +47,13 @@
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action=""  method="POST">
+                                    <form  action="{{ route('gallery_categories.store') }}"  method="POST">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="drinkmenu_category_name" placeholder="Ennter Category Name" value="" required>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="gallery_category_name" placeholder="Ennter Category Name" value="" required>
                                                         <div class="valid-feedback">
                                                             Validation
                                                         </div>
@@ -62,7 +62,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Description</label>
-                                                        <textarea class="form-control"  name="drinkmenu_category_description" placeholder="Enter Category Description" rows="3"></textarea>
+                                                        <textarea class="form-control"  name="gallery_category_description" placeholder="Enter Category Description" rows="3"></textarea>
                                                     </div>
                                                 </div>
 

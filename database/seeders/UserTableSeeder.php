@@ -17,6 +17,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        // run the seeder 
+        // php artisan make:seeder UserTableSeeder
         $user = User::create([
             'name' => 'Wandie Admin Innocent', 
             'email' => 'admin@admin.com',

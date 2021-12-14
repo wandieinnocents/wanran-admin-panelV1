@@ -26,7 +26,7 @@
                                 <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
                                    
                                     <div>
-                                        <a href="#" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add Photo</a>
+                                        <a href="{{ route('gallery_categories.create') }}" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add Photo</a>
                                     </div>
                                     
                                    
@@ -60,7 +60,7 @@
                                 </thead>
                                 <tbody>
                                    
-                                    
+                                @foreach($gallery_categories as $gallery_category)
                                       <tr>
                                         <th scope="row">
                                             <div class="form-check font-size-16">
@@ -70,11 +70,10 @@
                                         </th>
                                         <td>1</td>
                                         <td>
-                                            <img src="assets/backend_assets/assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded-circle me-2">
-                                            <a href="#" class="text-body">wandie Innocent</a>
+                                            <a href="#" class="text-body">{{  $gallery_category->gallery_category_name  }}</a>
                                         </td>
                                        
-                                        <td>I am  happy for your services</td>
+                                        <td>{{  $gallery_category->gallery_category_description  }}</td>
                                        
                                         <td colspan="6">
                                             <div class="row">
@@ -102,6 +101,9 @@
                                             </div>
                                         </td>
                                       </tr>
+                                    @endforeach 
+
+
                                 </tbody>
                             </table>
                             <!-- end table -->
