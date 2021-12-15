@@ -9,7 +9,6 @@
 <!-- Main content dashboard  -->
 <div class="page-content">
                     <div class="container-fluid">
-
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
@@ -27,19 +26,10 @@
                             </div>
                         </div>
                         <!-- end page title -->
-
                         <!-- Page content starts here -->
-
-
-
-                        <!-- Form -->
-
-
                         <div class="row">
                         <div class="col-xl-3">
-                            
                             </div>
-
                             <div class="col-xl-6">
                                 <div class="card">
                                     <div class="card-header">
@@ -65,18 +55,10 @@
                                                         <textarea class="form-control"  name="gallery_category_description" placeholder="Enter Category Description" rows="3"></textarea>
                                                     </div>
                                                 </div>
-
-                                                
-
-
                                                 
                                             </div>
 
                                             <!-- Editor -->
-
-                       
-                                            
-                                         
                                             <button class="btn btn-primary" type="submit">Add Category</button>
                                         </form>
                                     </div>
@@ -88,18 +70,7 @@
                         <!-- end row -->
 
                         <div class="col-xl-3">
-
                         </div>
-                        
-                        
-
-
-
-
-
-
-                   
-
                     </div>
                     <!-- container-fluid -->
                 </div>

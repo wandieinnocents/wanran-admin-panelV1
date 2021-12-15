@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 
 class ServiceCategoryController extends Controller
@@ -14,7 +15,8 @@ class ServiceCategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.service_categories.index');
+        $service_categories = ServiceCategory::all();
+        return view('backend.pages_backend.service_categories.index',compact('service_categories'));
 
     }
 
@@ -37,7 +39,12 @@ class ServiceCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service_category = new ServiceCategory();
+        $service_category->service_category_name = $request->service_category_name;
+        $service_category->service_category_description = $request->service_category_description;
+        $service_category->save();
+
+        return redirect('/service_categories');
     }
 
     /**

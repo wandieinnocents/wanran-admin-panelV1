@@ -36,10 +36,6 @@
                         </div>
                         <!-- end row -->
 
-
-
-
-
                         <!-- FETCH FEEDBACKS -->
 
                         <div class="table-responsive mb-4">
@@ -113,18 +109,6 @@
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
-
-                
-
-                        
-
-
-
-
-
-
-                   
-
                     </div>
                     <!-- container-fluid -->
                 </div>
