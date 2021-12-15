@@ -16,9 +16,7 @@ class Gallery extends Model
     ];
 
     public function gallery_category_r(){
-
-        //  , foreign key
-      //    category belongs to a food menu
+      
         return $this->belongsTo(GalleryCategory::class,'gallery_category_id');
   }
 
