@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 
 class ProjectCategoryController extends Controller
@@ -14,7 +15,10 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.project_categories.index');
+        $project_categories = ProjectCategory::all();
+        return view('backend.pages_backend.project_categories.index',compact('project_categories'));
+
+        
 
     }
 
@@ -37,7 +41,12 @@ class ProjectCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project_category = new ProjectCategory();
+        $project_category->project_category_name = $request->project_category_name;
+        $project_category->project_category_description = $request->project_category_description;
+        $project_category->save();
+
+        return redirect('/project_categories');
     }
 
     /**

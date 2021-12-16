@@ -18,7 +18,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <h5 class="card-title">Project Categories <span class="text-muted fw-normal ms-2">(1)</span></h5>
+                                    <h5 class="card-title">Project Category <span class="text-muted fw-normal ms-2">(1)</span></h5>
                                 </div>
                             </div>
 
@@ -26,7 +26,7 @@
                                 <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
                                    
                                     <div>
-                                        <a href="#" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add Project</a>
+                                        <a href="{{ route('project_categories.create') }}" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add Category</a>
                                     </div>
                                     
                                    
@@ -35,10 +35,6 @@
                             </div>
                         </div>
                         <!-- end row -->
-
-
-
-
 
                         <!-- FETCH FEEDBACKS -->
 
@@ -60,7 +56,7 @@
                                 </thead>
                                 <tbody>
                                    
-                                    
+                                @foreach($project_categories as $project_category)
                                       <tr>
                                         <th scope="row">
                                             <div class="form-check font-size-16">
@@ -70,11 +66,10 @@
                                         </th>
                                         <td>1</td>
                                         <td>
-                                            <img src="assets/backend_assets/assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded-circle me-2">
-                                            <a href="#" class="text-body">wandie Innocent</a>
+                                            <a href="#" class="text-body">{{  $project_category->project_category_name  }}</a>
                                         </td>
                                        
-                                        <td>I am  happy for your services</td>
+                                        <td>{{  $project_category->project_category_description  }}</td>
                                        
                                         <td colspan="6">
                                             <div class="row">
@@ -102,6 +97,9 @@
                                             </div>
                                         </td>
                                       </tr>
+                                    @endforeach 
+
+
                                 </tbody>
                             </table>
                             <!-- end table -->
@@ -111,18 +109,6 @@
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
-
-                
-
-                        
-
-
-
-
-
-
-                   
-
                     </div>
                     <!-- container-fluid -->
                 </div>

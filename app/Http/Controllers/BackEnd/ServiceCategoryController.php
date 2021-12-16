@@ -27,6 +27,7 @@ class ServiceCategoryController extends Controller
      */
     public function create()
     {
+        
         return view('backend.pages_backend.service_categories.create');
 
     }

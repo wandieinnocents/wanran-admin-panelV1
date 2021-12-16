@@ -32,5 +32,11 @@ class UserTableSeeder extends Seeder
         $role->syncPermissions($permissions);
      
         $user->assignRole([$role->id]);
+
+        // run the seeder commands
+        //seeder
+       /* php artisan db:seed --class=PermissionTableSeeder
+        php artisan db:seed --class=RoleTableSeeder
+        php artisan db:seed --class=UserTableSeeder */    
     }
 }

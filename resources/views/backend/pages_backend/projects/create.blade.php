@@ -47,49 +47,28 @@
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action=""  method="POST" enctype="multipart/form-data">
+                                    <form  action="{{ route('projects.store') }}"  method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Category</label>
-
-                                                    <select name="foodmenu_category_id" class="form-select">
-                                                            <option value="">Photo Kitchen</option>
-                                                           
-                                                            
+                                                    <select name="project_category_id" class="form-select">
+                                                    @foreach($project_categories as $project_category)
+                                                            <option value="{{ $project_category->id }}">{{ $project_category->project_category_name }}</option>
+                                                     @endforeach
                                                     </select>
-
-                
                                                     </div>
                                                 </div>
-                                                <div class="col-md-5">
+                                                <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom02">Project Name</label>
-                                                        <input type="text" class="form-control"  name="foodmenu_name" id="validationCustom02" placeholder="Foos name" value="" required>
+                                                        <input type="text" class="form-control"  name="project_name" id="validationCustom02" placeholder="Enter name" value="" required>
                                                         
                                                     </div>
                                                 </div>
 
-                                                <!-- Hidden status on create , visible on update -->
-                                                <div class="col-md-1" hidden>
-                                                    <div class="mb-3">
-                                                    <label class="form-label" for="validationCustom01">Status</label>
-
-                                                    <select name="foodmenu_status" class="form-select">
-                                                        
-                                                            <option value="in_stock" selected >In Stock</option>
-                                                            <option value="out_stock">Out Stock</option>
-                                                            <option value="excess">Excess</option>
-                                                            <option value="almost_done">Almost done</option>
-               
-                                                            
-                                                    </select>
-
-                
-                                                    </div>
-                                                </div>
-                                                <!-- Hidden status on create , visible on update -->
+                                               
                                             </div>
                                             <div class="row">
                                                 
@@ -97,7 +76,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom05">Photo</label>
-                                                        <input type="file" class="form-control" name="foodmenu_photo" id="validationCustom05" placeholder="Zip" required>
+                                                        <input type="file" class="form-control" name="project_photo" id="validationCustom05" placeholder="" required>
                                                         
                                                     </div>
                                                 </div>
@@ -106,10 +85,10 @@
                                             <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Description</label>
-                                                        <textarea class="form-control" name="foodmenu_description" id="exampleFormControlTextarea5" placeholder="Enter Category Description" rows="3"></textarea>
+                                                        <textarea class="form-control" name="project_description" id="exampleFormControlTextarea5" placeholder="Enter Category Description" rows="3"></textarea>
                                                     </div>
                                                 </div>
-                                            <button class="btn btn-primary" type="submit">Add Photo</button>
+                                            <button class="btn btn-primary" type="submit">Add Project</button>
                                         </form>
                                     </div>
                                 </div>

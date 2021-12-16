@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Service;
+use App\Models\Project;
 
-class ServiceCategory extends Model
+class ProjectCategory extends Model
 {
     use HasFactory;
     protected $fillables = [
@@ -15,7 +15,9 @@ class ServiceCategory extends Model
 
     ];
     // relationship
-    public function serivice_r(){
-        return $this->hasMany(Service::class);
+    public function project_r(){
+        return $this->hasMany(Project::class);
     }
+
+    
 }

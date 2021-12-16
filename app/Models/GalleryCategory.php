@@ -18,7 +18,7 @@ class GalleryCategory extends Model
     // relationship with food menu
     public function gallery_r(){
         // gallery category has many  gallery menu items
-        return $this->hasMany(GalleryCategory::class);
+        return $this->hasMany(Gallery::class);
     }
     
 
