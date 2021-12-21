@@ -17,6 +17,30 @@ use App\Http\Controllers;
 Route::get('/', function () {
     return view('welcome');
 });
+// FRONT END ROUTES
+// about us
+Route::resource('/about', 'App\Http\Controllers\FrontEnd\FrontEndAboutController');
+// testimonials
+Route::resource('/testimonials', 'App\Http\Controllers\FrontEnd\FrontEndTestimonialController');
+// services
+Route::resource('/works', 'App\Http\Controllers\FrontEnd\FrontEndServiceController');
+// gallery
+Route::resource('/pictures', 'App\Http\Controllers\FrontEnd\FrontEndGalleryController');
+//food menu
+Route::resource('/foods', 'App\Http\Controllers\FrontEnd\FrontEndFoodMenuController');
+//drinks menu
+Route::resource('/drinks', 'App\Http\Controllers\FrontEnd\FrontEndDrinkMenuController');
+//posts
+Route::resource('/articles', 'App\Http\Controllers\FrontEnd\FrontEndPostController');
+//bookings
+Route::resource('/book', 'App\Http\Controllers\FrontEnd\FrontEndBookingController');
+//contact 
+Route::resource('/contact', 'App\Http\Controllers\FrontEnd\FrontEndContactController');
+
+
+
+
+
 
 
 // BACKEND ROUTES
