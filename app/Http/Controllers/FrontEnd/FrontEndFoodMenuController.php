@@ -4,6 +4,8 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\FoodMenu;
+use App\Models\FoodMenuCategory;
 
 class FrontEndFoodMenuController extends Controller
 {
@@ -14,8 +16,10 @@ class FrontEndFoodMenuController extends Controller
      */
     public function index()
     {
-        //
-        return view('frontend.pages_frontend.foods.index');     
+        $foodmenus = FoodMenu::all();
+        $count_foodmenus = FoodMenu::count();
+        $foodmenu_categories = FoodMenuCategory::all();
+        return view('frontend.pages_frontend.foods.index',compact('foodmenus','foodmenu_categories','count_foodmenus'));     
 
     }
 
