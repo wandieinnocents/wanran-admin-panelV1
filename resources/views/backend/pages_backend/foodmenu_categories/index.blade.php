@@ -18,7 +18,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <h5 class="card-title">Food Menu Categories <span class="text-muted fw-normal ms-2">(10)</span></h5>
+                                    <h5 class="card-title">Food Menu Categories</h5>
                                 </div>
                             </div>
 
@@ -78,17 +78,17 @@
                                         <td colspan="6">
                                             <div class="row">
                                              <div class="col-md-4">
-                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
+                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#viewCategory{{ $foodmenu_category->id }}" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                             </div>
                                                 
                                             <div class="col-md-4">
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFoodOrder" data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editCategory{{ $foodmenu_category->id }}" data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                             </div>
                                             
                                             <!-- delete food menu -->
                                             <div class="col-md-4">
-                                            <form action="" method="post">
+                                            <form action="{{ route('foodmenu_categories.destroy',$foodmenu_category->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
@@ -101,6 +101,105 @@
                                             </div>
                                         </td>
                                       </tr>
+
+                                      <!-- Edit and Update category -->
+
+                                                      <!-- VIEW DETAILS MODEL -->
+
+                <div class="modal fade" id="viewCategory{{ $foodmenu_category->id }}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Category Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Name : {{ $foodmenu_category->foodmenu_category_name }}</p>
+                                <hr>
+                                <p>Description : {{ $foodmenu_category->foodmenu_category_description }}</p>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#editFoodOrder{{ $foodmenu_category->id }}"
+                                    data-bs-whatever="@getbootstrap">Edit Category</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF VIEW DETAILS MODEL -->
+
+                <!-- edit   MENU DETAILS MODEL -->
+                <div class="modal fade" id="editCategory{{ $foodmenu_category->id }}" tabindex="-1"
+                    aria-labelledby="editFoodOrderLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Category Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <!-- form update food menu items -->
+
+                                <form action="{{ route('foodmenu_categories.update', $foodmenu_category->id) }}" method="post"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PATCH')
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Name:</label>
+                                        <input type="text" class="form-control" name="foodmenu_category_name"
+                                            value="{{  $foodmenu_category->foodmenu_category_name }}" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Email:</label>
+                                        <input type="text" class="form-control" name="foodmenu_category_description"
+                                            value="{{  $foodmenu_category->foodmenu_category_description }}" id="recipient-name">
+                                    </div>
+                                   
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <!-- <button  type="submit" class="btn btn-primary">Submit</button> -->
+                                        <button class="btn btn-primary" type="submit">Update Category</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF edit DETAILS MODEL -->
+
+
+                                      <!-- End of edit and update category -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                     @endforeach
                                 </tbody>
                             </table>

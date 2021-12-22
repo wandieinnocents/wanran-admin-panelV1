@@ -52,6 +52,7 @@
                                             <label class="form-check-label" for="checkAll"></label>
                                         </div>
                                     </th>
+                                    <th scope="col">#ID</th>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Subject</th>
                                     <th scope="col">Email</th>
@@ -72,6 +73,7 @@
                                                 <label class="form-check-label" for="contacusercheck11"></label>
                                             </div>
                                         </th>
+                                        <td>{{ $feedback->id }}</td>
                                         <td>
                                             <a href="#" class="text-body">{{ $feedback->name }}</a>
                                         </td>

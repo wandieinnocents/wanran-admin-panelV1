@@ -84,7 +84,12 @@ class FoodMenuCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $foodmenu_category_update = FoodMenuCategory::find($id);
+        $foodmenu_category_update->foodmenu_category_name = $request->foodmenu_category_name;
+        $foodmenu_category_update->foodmenu_category_description = $request->foodmenu_category_description;
+        // update
+        $foodmenu_category_update->save();
+        return redirect('/foodmenu_categories');
     }
 
     /**
@@ -95,6 +100,9 @@ class FoodMenuCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $foodmenu_category = FoodMenuCategory::findOrFail($id);
+        $foodmenu_category->delete();
+
+        return redirect('/foodmenu_categories')->with('success', 'Food is successfully deleted');
     }
 }
