@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFrontEndContactsTable extends Migration
+class CreateFrontEndBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateFrontEndContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('front_end_contacts', function (Blueprint $table) {
+        Schema::create('front_end_bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('status');
+            $table->string('fullname');
             $table->string('email');
             $table->string('phone');
-            $table->string('subject');
             $table->text('description');
+            
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateFrontEndContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('front_end_contacts');
+        Schema::dropIfExists('front_end_bookings');
     }
 }

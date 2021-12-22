@@ -40,11 +40,13 @@ class FrontEndContactController extends Controller
         $contact = new FrontEndContact();
         $contact->name         = $request->name;
         $contact->email        = $request->email;
+        $contact->phone        = $request->phone;
         $contact->subject      = $request->subject;
         $contact->description  = $request->description;
 
         // save to DB
         $contact->save();
+        return redirect()->back()->with('message', 'Thank you for Contacting us!');;
     }
 
     /**
@@ -89,6 +91,11 @@ class FrontEndContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact_del = FrontEndContact::findOrFail($id);
+        $contact_del->delete();
+
+        return redirect('/feedbacks')->with('success', 'Feedback is successfully deleted');
+
+
     }
 }

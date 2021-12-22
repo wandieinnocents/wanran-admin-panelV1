@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\FrontEndBooking;
 
 class FrontEndBookingController extends Controller
 {
@@ -33,9 +34,20 @@ class FrontEndBookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        //
+        $booking = new FrontEndBooking;
+        $booking->status            = $request->status;
+        $booking->fullname          = $request->fullname;
+        $booking->email             = $request->email;
+        $booking->phone             = $request->phone;
+        $booking->description       = $request->description;
+        // booking
+        // dd($booking);
+        $booking->save();
+        
+        return redirect()->back()->with('message', 'Thank you for Booking with Us!');
     }
 
     /**
@@ -69,7 +81,7 @@ class FrontEndBookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -80,6 +92,6 @@ class FrontEndBookingController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
     }
 }

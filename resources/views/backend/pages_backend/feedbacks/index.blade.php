@@ -55,13 +55,13 @@
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Subject</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Address</th>
                                     <th scope="col">Phone</th>
                                     <th scope="col">Description</th>
-                                    <th scope="col">Status</th>
                                     <th style="width: 150px; min-width: 80px;">Action</th>
                                   </tr>
                                 </thead>
+                                <!-- Fetch data from database -->
+                                @foreach($feedbacks as $feedback)
                                 <tbody>
                                    
                                     
@@ -73,34 +73,27 @@
                                             </div>
                                         </th>
                                         <td>
-                                            <img src="assets/backend_assets/assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded-circle me-2">
-                                            <a href="#" class="text-body">wandie Innocent</a>
+                                            <a href="#" class="text-body">{{ $feedback->name }}</a>
                                         </td>
-                                        <td>Food Request</td>
-                                        <td>wandie@gmail.com</td>
-                                        <td>Kampala</td>
-                                        <td>0788555555</td>
-                                        <td>I am  happy for your services</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#" class="badge badge-soft-primary font-size-11">Delivered</a>
-                                                
-                                            </div>
-                                        </td>
+                                        <td>{{ $feedback->subject }}</td>
+                                        <td>{{ $feedback->email }}</td>
+                                        <td>{{ $feedback->phone }}</td>
+                                        <td>{!! Str::limit($feedback->description, 60, ' ...') !!}</td>
+                                        
                                         <td colspan="6">
-                                            <div class="row">
+                                             <div class="row">
                                              <div class="col-md-4">
-                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
+                                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $feedback->id }}" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                             </div>
                                                 
-                                            <div class="col-md-4">
+                                            <!-- <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFoodOrder" data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
-                                            </div>
+                                            </div>  -->
                                             
                                             <!-- delete food menu -->
                                             <div class="col-md-4">
-                                            <form action="" method="post">
+                                            <form action="{{ route('contact.destroy', $feedback->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
@@ -114,6 +107,50 @@
                                         </td>
                                       </tr>
                                 </tbody>
+
+
+                <!-- VIEW DETAILS MODEL -->
+                <div class="modal fade" id="exampleModal{{ $feedback->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Feedback Details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                               
+                                    
+
+                                    <div class="modal-body">
+                                    <p>Name : {{ $feedback->name }}</p>
+                                    <hr>
+                                    <p>Email : {{ $feedback->email }}</p>
+                                    <hr>
+                                    <p>Subject : {{ $feedback->subject }}</p>
+                                    <hr>
+                                    <p>Phone : {{ $feedback->phone }}</p>
+                                    <hr>
+
+                                    <p>Description : {{ $feedback->description }}</p>
+                                    
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close </button>
+                                    </div>
+                                </div>
+                              </div>
+                 </div>
+                <!-- END OF VIEW DETAILS MODEL -->
+
+
+
+
+
+                                @endforeach
+                                <!-- End fetch data from DB -->
+
+
+
                             </table>
                             <!-- end table -->
                         </div>

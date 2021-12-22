@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Models\FrontEndBooking;
+
 
 class BookingController extends Controller
 {
@@ -14,7 +17,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.bookings.index');
+        $bookings =  FrontEndBooking::all();
+        return view('backend.pages_backend.bookings.index',compact('bookings'));
     }
 
     /**
@@ -46,7 +50,9 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        $booking_single = FrontEndBooking::find($id);
+        // dd($foodmenu_single);
+        return view('backend.pages_backend.bookings.show',compact('booking_single'));
     }
 
     /**
@@ -57,7 +63,7 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -69,7 +75,17 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $booking = FrontEndBooking::find($id);
+        $booking->status            = $request->status;
+        $booking->fullname          = $request->fullname;
+        $booking->email             = $request->email;
+        $booking->phone             = $request->phone;
+        $booking->description       = $request->description;
+        // booking
+        // dd($booking);
+        $booking->save();
+        
+        return redirect()->back()->with('message', 'Thank you for Booking with Us!');
     }
 
     /**
@@ -80,6 +96,9 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+        $booking->delete();
+
+        return redirect('/bookings')->with('success', 'Booking is successfully deleted');
     }
 }

@@ -144,7 +144,7 @@
 										</li>
 										
 										<li><a href="/articles">Blog</a></li>
-										<li><a href="/book">Booking</a></li>
+										<li><a href="{{ route('book.create') }}">Booking</a></li>
 										
 
 										<li><a href="{{ route('contact.create') }}">Contact</a></li>

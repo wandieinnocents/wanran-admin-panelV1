@@ -28,7 +28,13 @@
 
             <!-- Form Column -->
             <div class="form-column col-lg-8 col-md-12 col-sm-12">
+            
                 <div class="inner-column">
+                @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
                     <div class="title-box">
                         <h3 class="text-center">We Love To Hear From You</h3>
                         <div class="text text-center">If it's not too much trouble informed us regarding whether you
@@ -37,12 +43,15 @@
                     </div>
 
                     <!-- Contact Form -->
+                   
+
                     <div class="contact-form">
-                        <form method="post" action="" id="contact-form">
+                        <form method="post" action="{{ route('book.store') }}" id="contact-form">
+                            @csrf()
                             <div class="row clearfix">
 
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12">
-                                    <input type="text" name="username" value="" placeholder="Name" required>
+                                    <input type="text" name="fullname" value="" placeholder="Full Name" required>
                                 </div>
 
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12">
@@ -50,11 +59,28 @@
                                 </div>
 
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="subject" value="" placeholder="Subject" required>
+                                    <input type="text" name="phone" value="" placeholder="Phone" required>
+                                </div>
+
+                                <!-- status -->
+                                <div class="col-md-1" hidden>
+                                    <div class="mb-3">
+                                    <label class="form-label" for="validationCustom01">Status</label>
+
+                                    <select name="status" class="form-select">
+                                        
+                                            <option value="pending" selected >Pending</option>
+                                            <option value="processing">Processing</option>
+                                            <option value="completed">Completed</option>
+                                            
+                                    </select>
+
+
+                                    </div>
                                 </div>
 
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <textarea name="message" placeholder="Message"></textarea>
+                                    <textarea name="description" placeholder="Enter Booking Details"></textarea>
                                 </div>
 
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Feedback;
+use App\Models\FrontEndContact;
+
 
 class FeedbackController extends Controller
 {
@@ -15,7 +17,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $feedbacks =  Feedback::all();
+        $feedbacks =  FrontEndContact::all();
 
         return view('backend.pages_backend.feedbacks.index',compact('feedbacks'));
     }

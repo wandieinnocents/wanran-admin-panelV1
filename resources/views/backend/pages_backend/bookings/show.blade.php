@@ -31,6 +31,10 @@
                         <!-- Page content starts here -->
 
                         <p>food menus categories index</p>
+                        {{ $booking_single->status }}
+                        {{ $booking_single->email }}
+                        {{ $booking_single->description }}
+                        {{ $booking_single->fullname }}
 
                         
 
