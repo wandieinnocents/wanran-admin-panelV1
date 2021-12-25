@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Models\DrinkMenu;
+use App\Models\FoodMenu;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +18,15 @@ use App\Http\Controllers;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $foodmenus = Foodmenu::paginate(12);
+    $foodmenus_chicken_categories = Foodmenu::where('foodmenu_category_id',7)->get();
+    // dd($foodmenus_chicken_categories);
+    $foodmenus_pizza_categories = Foodmenu::where('foodmenu_category_id', 6)->get();
+
+    $drinkmenus = DrinkMenu::all();
+
+    return view('welcome',compact('foodmenus','drinkmenus','foodmenus_chicken_categories','foodmenus_pizza_categories'));
 });
 // FRONT END ROUTES
 // about us

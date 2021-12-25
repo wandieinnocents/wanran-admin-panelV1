@@ -55,9 +55,7 @@
                             <div class="pull-left text">Onion, good-quality beef mince, egg, vegetable oil, burger buns,
                                 black pepper, salt</div>
 
-								<div class="pull-right" >
-                                    <div class="price">Order</div>
-                                </div>
+								
 							</div>
 
                         </div>

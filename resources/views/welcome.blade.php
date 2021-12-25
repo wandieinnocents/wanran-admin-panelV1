@@ -11,62 +11,10 @@
 @include('frontend.includes_frontend.slider')
 		<!--================End Slider Area =================-->
         
-<!-- Spicy Section -->
-<section class="spicy-section">
-			<div class="auto-container">
-				<div class="row clearfix">
 
-					<!-- Flavour Block -->
-					<div class="flavour-block col-lg-6 col-md-12 col-sm-12">
-						<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="assets/frontend_assets/assets/images/resource/pizza.jpg" alt="" />
-								<div class="overlay-box">
-									<div class="content">
-										<h2>Pizza Calabriz <span>Mascarpone · Nduja Spicy</span></h2>
-										<a href="shop-single.html" class="title">Hot & Spicy</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<!-- Drink Block -->
-					<div class="drink-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="assets/frontend_assets/assets/images/resource/drink.jpg" alt="" />
-								<div class="overlay-box">
-									<div class="content">
-										<h2>Iced <span>Coffee</span></h2>
-										<div class="title">Summer</div>
-										<a href="shop-single.html" class="read-more">Read More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<!-- Chips Block -->
-					<div class="chips-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="assets/frontend_assets/assets/images/resource/chips.jpg" alt="" />
-								<div class="overlay-box">
-									<div class="content">
-										<h2>Get your <br> <span>free</span></h2>
-										<div class="title">French Fry</div>
-										<a href="shop-single.html" class="read-more">Read More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</section>
-		<!-- End Spicy Section -->
+		
 
 		<!-- Products Section -->
 		<section class="products-section">
@@ -74,7 +22,7 @@
 
 				<!-- Sec Title -->
 				<div class="sec-title centered">
-					<h2>Our Products</h2>
+					<h2>Our Food Menu</h2>
 				</div>
 
 				<!-- MixitUp Galery -->
@@ -84,163 +32,75 @@
 					<div class="filters clearfix">
 						<ul class="filter-tabs filter-btns clearfix">
 							<li class="active filter" data-role="button" data-filter="all">All</li>
+							<li class="filter" data-role="button" data-filter=".chicken">Chicken</li>
 							<li class="filter" data-role="button" data-filter=".pizza">Pizza</li>
-							<li class="filter" data-role="button" data-filter=".burgers">Burgers</li>
-							<li class="filter" data-role="button" data-filter=".wraps">Wraps</li>
-							<li class="filter" data-role="button" data-filter=".fries">Fries</li>
-							<li class="filter" data-role="button" data-filter=".salad">Salad</li>
-							<li class="filter" data-role="button" data-filter=".fest">Spice fest</li>
-							<li class="filter" data-role="button" data-filter=".beverages">Beverages</li>
 						</ul>
 					</div>
 
 					<div class="filter-list row clearfix">
-
 						<!-- Products Block -->
-						<div class="product-block all mix salad fest wraps fries col-lg-3 col-md-6 col-sm-12">
+						@foreach($foodmenus as $foodmenu)
+						<div class="product-block all mix salad fest wraps foods col-lg-3 col-md-6 col-sm-12">
 							<div class="inner-box">
 								<figure class="image-box">
 									<img src="assets/frontend_assets/assets/images/resource/products/1.jpg" alt="">
 								</figure>
 								<div class="lower-content">
-									<h4><a href="shop-single.html">Chicken Burger</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
+								<span class="badge badge-pill badge-primary">{{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</span>
+									<h4><a href="shop-single.html">{{ $foodmenu->foodmenu_name }}</a> </h4>
+									<div class="text">{{ $foodmenu->foodmenu_description }}</div>
+									<div class="price">${{ $foodmenu->foodmenu_price }}</div>
 									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
+										<!-- <a href="shop-single.html" class="theme-btn btn-style-five"><span
+												class="txt">Order Now</span></a> -->
 									</div>
 								</div>
 							</div>
 						</div>
+						@endforeach
 
-						<!-- Products Block -->
-						<div class="product-block all mix beverages wraps col-lg-3 col-md-6 col-sm-12">
+						<!-- Chicken - Products Block -->
+						@foreach($foodmenus_chicken_categories as $foodmenu)
+							<div class="product-block all mix chicken col-lg-3 col-md-6 col-sm-12">
 							<div class="inner-box">
-								<figure class="image-box">
-									<img src="assets/frontend_assets/assets/images/resource/products/2.jpg" alt="">
-								</figure>
-								<div class="lower-content">
-									<h4><a href="shop-single.html">Classic Smash</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
-									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
+									<figure class="image-box">
+										<img src="assets/frontend_assets/assets/images/resource/products/1.jpg" alt="">
+									</figure>
+									<div class="lower-content">
+									<span class="badge badge-pill badge-primary">{{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</span>
+										<h4><a href="shop-single.html">{{ $foodmenu->foodmenu_name }}</a> </h4>
+										<div class="text">{{ $foodmenu->foodmenu_description }}</div>
+										<div class="price">${{ $foodmenu->foodmenu_price }}</div>
+										<div class="lower-box">
+											<!-- <a href="shop-single.html" class="theme-btn btn-style-five"><span
+													class="txt">Order Now</span></a> -->
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						@endforeach
 
-						<!-- Products Block -->
-						<div class="product-block all mix salad fest burgers beverages col-lg-3 col-md-6 col-sm-12">
+						<!-- Pizza products block -->
+						<!-- Chicken - Products Block -->
+						@foreach($foodmenus_pizza_categories as $foodmenu)
+							<div class="product-block all mix pizza col-lg-3 col-md-6 col-sm-12">
 							<div class="inner-box">
-								<figure class="image-box">
-									<img src="assets/frontend_assets/assets/images/resource/products/1.jpg" alt="">
-								</figure>
-								<div class="lower-content">
-									<h4><a href="shop-single.html">Classic Smash</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
-									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
+									<figure class="image-box">
+										<img src="assets/frontend_assets/assets/images/resource/products/1.jpg" alt="">
+									</figure>
+									<div class="lower-content">
+									<span class="badge badge-pill badge-primary">{{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</span>
+										<h4><a href="shop-single.html">{{ $foodmenu->foodmenu_name }}</a> </h4>
+										<div class="text">{{ $foodmenu->foodmenu_description }}</div>
+										<div class="price">${{ $foodmenu->foodmenu_price }}</div>
+										<div class="lower-box">
+											<!-- <a href="shop-single.html" class="theme-btn btn-style-five"><span
+													class="txt">Order Now</span></a> -->
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-
-						<!-- Products Block -->
-						<div class="product-block all mix burgers col-lg-3 col-md-6 col-sm-12">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="assets/frontend_assets/assets/images/resource/products/3.jpg" alt="">
-								</figure>
-								<div class="lower-content">
-									<h4><a href="shop-single.html">Classic Smash</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
-									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Products Block -->
-						<div class="product-block all mix pizza wraps beverages col-lg-3 col-md-6 col-sm-12">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="assets/frontend_assets/assets/images/resource/products/4.jpg" alt="">
-								</figure>
-								<div class="lower-content">
-									<h4><a href="shop-single.html">Chicken Burger</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
-									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Products Block -->
-						<div class="product-block all mix salad pizza burgers fries col-lg-3 col-md-6 col-sm-12">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="assets/frontend_assets/assets/images/resource/products/5.jpg" alt="">
-								</figure>
-								<div class="lower-content">
-									<h4><a href="shop-single.html">Soft Drink</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
-									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Products Block -->
-						<div class="product-block all mix salad wraps pizza fries col-lg-3 col-md-6 col-sm-12">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="assets/frontend_assets/assets/images/resource/products/6.jpg" alt="">
-								</figure>
-								<div class="lower-content">
-									<h4><a href="shop-single.html">Classic Smash</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
-									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Products Block -->
-						<div
-							class="product-block all mix pizza wraps burgers beverages salad col-lg-3 col-md-6 col-sm-12">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="assets/frontend_assets/assets/images/resource/products/1.jpg" alt="">
-								</figure>
-								<div class="lower-content">
-									<h4><a href="shop-single.html">Classic Smash</a></h4>
-									<div class="text">Our flavors & ingredients to build our local burgers.</div>
-									<div class="price">$17.00</div>
-									<div class="lower-box">
-										<a href="shop-single.html" class="theme-btn btn-style-five"><span
-												class="txt">Order Now</span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
+						@endforeach
 					</div>
 
 				</div>
