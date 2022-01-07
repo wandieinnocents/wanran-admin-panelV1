@@ -64,7 +64,7 @@
 							<div class="product-block all mix chicken col-lg-3 col-md-6 col-sm-12">
 							<div class="inner-box">
 									<figure class="image-box">
-										<img src="assets/frontend_assets/assets/images/resource/products/1.jpg" alt="">
+										<img src="{{ asset($foodmenu->foodmenu_photo) }}" alt="">
 									</figure>
 									<div class="lower-content">
 									<span class="badge badge-pill badge-primary">{{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</span>

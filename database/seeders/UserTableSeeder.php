@@ -20,8 +20,8 @@ class UserTableSeeder extends Seeder
         // run the seeder 
         // php artisan make:seeder UserTableSeeder
         $user = User::create([
-            'name' => 'Wandie Admin Innocent', 
-            'email' => 'admin@admin.com',
+            'name' => 'Wandie Admin ', 
+            'email' => 'wandieinnocent2@gmail.com',
             'password' => Hash::make('wandie22')
         ]);
          
@@ -35,8 +35,11 @@ class UserTableSeeder extends Seeder
 
         // run the seeder commands
         //seeder
-       /* php artisan db:seed --class=PermissionTableSeeder
+       /* 
+       php artisan db:seed --class=PermissionTableSeeder
         php artisan db:seed --class=RoleTableSeeder
-        php artisan db:seed --class=UserTableSeeder */    
+        php artisan db:seed --class=UserTableSeeder 
+        
+        */    
     }
 }

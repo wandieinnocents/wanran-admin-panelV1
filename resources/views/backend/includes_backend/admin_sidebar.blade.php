@@ -30,12 +30,12 @@
                 </li>
 
                 <!-- Orders -->
-                <li>
+                <!-- <li>
                     <a href="{{ route('orders.index') }}">
                         <i data-feather="users"></i>
                         <span data-key="t-dashboard">Orders</span>
                     </a>
-                </li>
+                </li> -->
 
 
                 <!-- Foods Menu -->
