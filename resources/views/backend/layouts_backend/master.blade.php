@@ -5,7 +5,7 @@
 <head>
 
         <meta charset="utf-8" />
-        <title>Restaurant</title>
+        <title>Backend </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Quality at its best" name="description" />
         <meta content="Wanran" name="author" />

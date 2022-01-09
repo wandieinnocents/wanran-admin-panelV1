@@ -8,7 +8,7 @@
                                     <img src="assets/backend_assets/assets/images/logo-sm.svg" alt="" height="24">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/backend_assets/assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Restaurant</span>
+                                    <img src="assets/backend_assets/assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Administrator</span>
                                 </span>
                             </a>
 
