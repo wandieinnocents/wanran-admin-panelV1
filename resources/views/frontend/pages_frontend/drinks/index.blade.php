@@ -11,11 +11,11 @@
 		<!-- Page Title -->
 		<section class="page-title" style="background-image: url(assets/frontend_assets/assets/images/background/11.jpg)">
 			<div class="auto-container">
-				<h1>Menu Features</h1>
+				<h1>Drink Menus</h1>
 				<ul class="bread-crumb clearfix">
 					<li><a href="index-2.html">Home</a></li>
-					<li>Our Offer</li>
-					<li>Menu Features</li>
+					<li>Drinks</li>
+					
 				</ul>
 			</div>
 		</section>

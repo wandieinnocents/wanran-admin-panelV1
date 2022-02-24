@@ -32,8 +32,7 @@
                     @endif
                     <div class="title-box">
                         <h3>We Love To Hear From You</h3>
-                        <div class="text">If it's not too much trouble informed us regarding whether you have an
-                            inquiry, need to leave a remark, or might want additional data about Advotis</div>
+                        <div class="text">We have a quick response team to get back to you.</div>
                     </div>
 
                     <!-- Contact Form -->
@@ -78,11 +77,10 @@
                 <div class="inner-column">
                     <h3>Our Office Address</h3>
                     <ul>
-                        <li><strong>Main Restaurant:</strong>587, Dartmouthi Street, Boston, Massachusetts 0658,
-                            PO Box 16122 United States</li>
-                        <li><strong>Branch, Raurance Road:</strong>357, West Victoria, Darbaians, Collinsicious
-                            0658, PO Box 16578 London</li>
-                        <li><strong>Have any querry:</strong>Call us on : (1800) 456 7890</li>
+                        <li><strong>Main Restaurant:</strong>
+                            Kampala, Uganda</li>
+                        <li><strong>Branch:</strong>Kireka, Kamuli</li>
+                        <li><strong>Have any querry:</strong>Call us on : +974 33271165</li>
                     </ul>
                 </div>
             </div>

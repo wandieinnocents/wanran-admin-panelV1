@@ -5,9 +5,9 @@
 					<div class="top-left">
 						<!-- Info List -->
 						<ul class="info-list">
-							<li>Serving to whole New York</li>
+							<li>Quality service to you.</li>
 							<li><a href="mailto:info@wengdo.com"><span class="icon far fa-envelope"></span>
-									info@wengdo.com</a></li>
+									info@cafedesarah.com</a></li>
 						</ul>
 					</div>
 					<div class="top-right clearfix">

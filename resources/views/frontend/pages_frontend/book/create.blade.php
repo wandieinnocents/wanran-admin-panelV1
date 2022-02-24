@@ -36,10 +36,8 @@
                         </div>
                     @endif
                     <div class="title-box">
-                        <h3 class="text-center">We Love To Hear From You</h3>
-                        <div class="text text-center">If it's not too much trouble informed us regarding whether you
-                            have an
-                            inquiry, need to leave a remark, or might want additional data about Advotis</div>
+                        <h3 class="text-center">Have a special request ?</h3>
+                        <div class="text text-center">Book with us today</div>
                     </div>
 
                     <!-- Contact Form -->
