@@ -19,10 +19,10 @@ use App\Models\FoodMenu;
 
 Route::get('/', function () {
 
-    $foodmenus = Foodmenu::paginate(12);
-    $foodmenus_chicken_categories = Foodmenu::where('foodmenu_category_id',7)->get();
+    $foodmenus = Foodmenu::paginate(8);
+    $foodmenus_chicken_categories = Foodmenu::where('foodmenu_category_id',3)->get();
     // dd($foodmenus_chicken_categories);
-    $foodmenus_pizza_categories = Foodmenu::where('foodmenu_category_id', 6)->get();
+    $foodmenus_pizza_categories = Foodmenu::where('foodmenu_category_id', 1)->get();
 
     $drinkmenus = DrinkMenu::all();
 

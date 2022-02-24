@@ -39,8 +39,9 @@
 					<div class="auto-container clearfix">
 						<!--Info-->
 						<div class="logo-outer">
-							<div class="logo"><a href="index-2.html"><img src="assets/frontend_assets/assets/images/logo.png" alt=""
-										title=""></a></div>
+							<!-- <div class="logo"><a href="index-2.html"><img src="assets/frontend_assets/assets/images/logo/white.png"  width="100" height="100" alt=""
+										title=""></a></div> -->
+										<h2 style="margin-top:20px; color:white;"><strong>CAFE DE SARAH</strong></h2>
 						</div>
 
 						<!--Nav Box-->
@@ -60,16 +61,17 @@
 									<ul class="navigation clearfix">
 										<!-- <li class="current dropdown"><a href="/">Home</a> -->
 										<li><a href="/">Home</a></li>
+										<li><a href="/about">About Us</a></li>
 											
-										</li>
-										<li class="dropdown"><a href="#">Know Us</a>
+									
+										<!-- <li class="dropdown"><a href="#">Know Us</a>
 											<ul>
 												<li><a href="/about">About us</a></li>
 												<li><a href="/works">Services</a></li>
 												<li><a href="/testimonials">Testimonials</a></li>
 												<li><a href="/pictures">Gallery</a></li>
 											</ul>
-										</li>
+										</li> -->
 										<li class="dropdown"><a href="#">Our Menu</a>
 											<ul>
 												<li><a href="/foods">Food Menu</a></li>
@@ -77,7 +79,7 @@
 											</ul>
 										</li>
 										
-										<li><a href="/articles">Blog</a></li>
+										<!-- <li><a href="/articles">Blog</a></li> -->
 										<li><a href="{{ route('book.create') }}">Booking</a></li>
 										
 
@@ -90,8 +92,8 @@
 
 							<div class="outer-box">
 								<div class="order">
-									Order Now
-									<span><a href="tel:1800-456-7890">1800 456 7890</a></span>
+									Call Now
+									<span><a href="tel:1800-456-7890">+974 33271165</a></span>
 								</div>
 							</div>
 
@@ -106,8 +108,9 @@
 				<div class="auto-container clearfix">
 					<!--Logo-->
 					<div class="logo pull-left">
-						<a href="index-2.html" class="img-responsive"><img src="assets/frontend_assets/assets/images/logo-small.png" alt=""
-								title=""></a>
+						<!-- <a href="index-2.html" class="img-responsive"><img src="assets/frontend_assets/assets/images/logo-small.png" alt=""
+								title=""></a> -->
+								<h2><strong>CAFE DE SARAH</strong></h2>
 					</div>
 
 					<!--Right Col-->
@@ -126,16 +129,17 @@
 								<div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
 									<ul class="navigation clearfix">
 										<li class="current dropdown"><a href="/">Home</a>
+											<li><a href="/about">About Us</a></li>
 											
 										</li>
-										<li class="dropdown"><a href="#">Know Us</a>
+										<!-- <li class="dropdown"><a href="#">Know Us</a>
 											<ul>
 												<li><a href="/about">About us</a></li>
 												<li><a href="/works">Services</a></li>
 												<li><a href="/testimonials">Testimonials</a></li>
 												<li><a href="/pictures">Gallery</a></li>
 											</ul>
-										</li>
+										</li> -->
 										<li class="dropdown"><a href="#">Our Menu</a>
 											<ul>
 												<li><a href="/foods">Food Menu</a></li>
@@ -143,7 +147,7 @@
 											</ul>
 										</li>
 										
-										<li><a href="/articles">Blog</a></li>
+										<!-- <li><a href="/articles">Blog</a></li> -->
 										<li><a href="{{ route('book.create') }}">Booking</a></li>
 										
 

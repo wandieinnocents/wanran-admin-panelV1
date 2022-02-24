@@ -15,6 +15,44 @@
 
 
 		
+		<!-- About Section Two -->
+		<section class="about-section-two" style="margin-top: 10px;">
+			<div class="auto-container">
+				<div class="row clearfix">
+
+					<!-- Content Column -->
+					<div class="content-column col-lg-7 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<h2>Our Background</h2>
+							<div class="text">
+								<p>la cuisine de sarah , founded 2021 by Ex intercontinental cuisine chef , Mbonde bilari who 
+									worked with several 5 star hotels and restaurants around the globe , the name “ 
+									la cuisine de Sarah”derives from his late mom sarah , which means (Sarah’s kitchen)la 
+									cuisine de sarah is a business combined with extraordinary 5 star service in food 
+									service as well as hotel and tourism industry. Therefore the greatly earned experience 
+									from the past consistency, is behind its formation.</p>
+								
+							</div>
+						</div>
+					</div>
+
+					<!-- Images Column -->
+					<div class="images-column col-lg-5 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<div class="image" style="margin-top: -25px;">
+								<img src="assets/frontend_assets/assets/images/resource/about-1.jpg" alt="" />
+							</div>
+							<div class="image-two">
+								<img src="assets/frontend_assets/assets/images/resource/about-2.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- End About Section Two -->
+		<br>
 
 		<!-- Products Section -->
 		<section class="products-section">
@@ -48,7 +86,11 @@
 								<div class="lower-content">
 								<span class="badge badge-pill badge-primary">{{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</span>
 									<h4><a href="shop-single.html">{{ $foodmenu->foodmenu_name }}</a> </h4>
-									<div class="text">{{ $foodmenu->foodmenu_description }}</div>
+									<div class="text">
+										{{ \Illuminate\Support\Str::limit($foodmenu->foodmenu_description, 100, $end='...') }}
+										
+
+									</div>
 									<div class="price">${{ $foodmenu->foodmenu_price }}</div>
 									<div class="lower-box">
 										<!-- <a href="shop-single.html" class="theme-btn btn-style-five"><span
@@ -64,12 +106,17 @@
 							<div class="product-block all mix chicken col-lg-3 col-md-6 col-sm-12">
 							<div class="inner-box">
 									<figure class="image-box">
-										<img src="{{ asset($foodmenu->foodmenu_photo) }}" alt="">
+										<img src="{{ $foodmenu->foodmenu_photo}}" alt="">
 									</figure>
 									<div class="lower-content">
 									<span class="badge badge-pill badge-primary">{{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</span>
 										<h4><a href="shop-single.html">{{ $foodmenu->foodmenu_name }}</a> </h4>
-										<div class="text">{{ $foodmenu->foodmenu_description }}</div>
+										<div class="text">
+
+											
+											{{ \Illuminate\Support\Str::limit( $foodmenu->foodmenu_description , 150, $end='...') }}
+
+										</div>
 										<div class="price">${{ $foodmenu->foodmenu_price }}</div>
 										<div class="lower-box">
 											<!-- <a href="shop-single.html" class="theme-btn btn-style-five"><span
@@ -91,7 +138,12 @@
 									<div class="lower-content">
 									<span class="badge badge-pill badge-primary">{{ $foodmenu->foodmenu_category_r->foodmenu_category_name }}</span>
 										<h4><a href="shop-single.html">{{ $foodmenu->foodmenu_name }}</a> </h4>
-										<div class="text">{{ $foodmenu->foodmenu_description }}</div>
+										<div class="text">
+
+											
+											{{ \Illuminate\Support\Str::limit( $foodmenu->foodmenu_description  , 150, $end='...') }}
+
+										</div>
 										<div class="price">${{ $foodmenu->foodmenu_price }}</div>
 										<div class="lower-box">
 											<!-- <a href="shop-single.html" class="theme-btn btn-style-five"><span
@@ -157,8 +209,7 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-1.png" alt="" />
 							</div>
-							<h6>Free shipping on <br> first order</h6>
-							<div class="text">Sign up for updates and <br> get free shipping</div>
+							<h6>RELIABLE</h6>
 						</div>
 					</div>
 
@@ -168,8 +219,7 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-2.png" alt="" />
 							</div>
-							<h6>Best Taste <br> Guaranttee</h6>
-							<div class="text">We use best ingredients to <br> cook the taste food.</div>
+							<h6>ACCESSIBLE</h6>
 						</div>
 					</div>
 
@@ -179,8 +229,7 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-3.png" alt="" />
 							</div>
-							<h6>Variety of <br> Dishes</h6>
-							<div class="text">We give variety of dishes, <br> deserts, and drinks</div>
+							<h6>TIMELY</h6>
 						</div>
 					</div>
 
@@ -190,8 +239,7 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-4.png" alt="" />
 							</div>
-							<h6>25 Minites <br> Delivery</h6>
-							<div class="text">We deliver your food at <br> your dooe that you order</div>
+							<h6>WE DELIVER</h6>
 						</div>
 					</div>
 

@@ -59,56 +59,13 @@
 
 	
 
-		<!-- Testimonial Section Two -->
-		<!-- <section class="testimonial-section-two" style="background-image:url(assets/frontend_assets/assets/images/background/13.jpg)">
-			<div class="auto-container">
-				<div class="inner-container">
-					<div class="sec-title light">
-						<h2>What our Client Says</h2>
-					</div>
-					<div class="single-item-carousel owl-carousel owl-theme">
-
-						<div class="testimonial-block-two">
-							<div class="inner-box">
-								<div class="image-box">
-									<div class="image"><img src="assets/frontend_assets/assets/images/resource/author-2.jpg" alt="" /></div>
-								</div>
-								<div class="text">Osed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-									nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-									consectetur, adipisci sed quia non numquam qui ratione voluptatem sequi nesciunt.
-									Neque porro quisquam est.</div>
-								<div class="quote-icon">
-									<span class="icon fa fa-quote-left"></span>
-								</div>
-								<div class="author">- Robert joe</div>
-							</div>
-						</div>
-
-						<div class="testimonial-block-two">
-							<div class="inner-box">
-								<div class="image-box">
-									<div class="image"><img src="assets/frontend_assets/assets/images/resource/author-2.jpg" alt="" /></div>
-								</div>
-								<div class="text">Osed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-									nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-									consectetur, adipisci sed quia non numquam qui ratione voluptatem sequi nesciunt.
-									Neque porro quisquam est.</div>
-								<div class="quote-icon">
-									<span class="icon fa fa-quote-left"></span>
-								</div>
-								<div class="author">- Robert joe</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</section> -->
-		<!-- End Testimonial Section Two -->
 		<hr>
 
 		<!-- Services Section -->
-		<section class="services-section style-two">
+		<!-- Services Section -->
+		<section class="services-section">
+			<!-- Side Image -->
+			<div class="side-image"><img src="assets/frontend_assets/assets/images/resource/service-image.jpg" alt="" /></div>
 			<div class="auto-container">
 				<div class="row clearfix">
 
@@ -118,8 +75,7 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-1.png" alt="" />
 							</div>
-							<h6>Free shipping on <br> first order</h6>
-							<div class="text">Sign up for updates and <br> get free shipping</div>
+							<h6>RELIABLE</h6>
 						</div>
 					</div>
 
@@ -129,8 +85,7 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-2.png" alt="" />
 							</div>
-							<h6>Best Taste <br> Guaranttee</h6>
-							<div class="text">We use best ingredients to <br> cook the taste food.</div>
+							<h6>ACCESSIBLE</h6>
 						</div>
 					</div>
 
@@ -140,8 +95,7 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-3.png" alt="" />
 							</div>
-							<h6>Variety of <br> Dishes</h6>
-							<div class="text">We give variety of dishes, <br> deserts, and drinks</div>
+							<h6>TIMELY</h6>
 						</div>
 					</div>
 
@@ -151,13 +105,14 @@
 							<div class="icon-box">
 								<img src="assets/frontend_assets/assets/images/resource/service-4.png" alt="" />
 							</div>
-							<h6>25 Minites <br> Delivery</h6>
-							<div class="text">We deliver your food at <br> your dooe that you order</div>
+							<h6>WE DELIVER</h6>
 						</div>
 					</div>
 
 				</div>
 			</div>
+
+
 		</section>
 		<!-- End Services Section -->
 
