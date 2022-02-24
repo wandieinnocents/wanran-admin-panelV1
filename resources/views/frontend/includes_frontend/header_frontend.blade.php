@@ -21,12 +21,9 @@
 						</ul>
 						<div class="option-list">
 							<!-- Cart Button -->
-							<div class="cart-btn">
-								<a href="shop-single.html" class="icon flaticon-shopping-cart"><span
-										class="total-cart">3</span></a>
-							</div>
+							
 							<!-- Search Btn -->
-							<div class="search-box-btn"><span class="icon fa fa-search"></span></div>
+							<!-- <div class="search-box-btn"><span class="icon fa fa-search"></span></div> -->
 						</div>
 					</div>
 				</div>
